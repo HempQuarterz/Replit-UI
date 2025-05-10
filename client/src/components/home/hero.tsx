@@ -24,7 +24,7 @@ const HomepageHero = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-green-400 text-stroke-white drop-shadow-lg">
           Interactive Industrial Hemp Database
         </h1>
-        <p className="mt-3 max-w-md mx-auto text-lg text-white sm:text-xl md:mt-5 md:max-w-3xl drop-shadow-md font-medium">
+        <p className="mt-3 max-w-md mx-auto text-lg text-white sm:text-xl md:mt-5 md:max-w-3xl drop-shadow-md font-medium text-stroke-thin-white">
           Explore the versatile applications of industrial hemp across industries, plant parts, and product categories.
         </p>
         
@@ -37,7 +37,7 @@ const HomepageHero = () => {
                 <Counter end={stats?.totalProducts || 0} suffix="+" />
               )}
             </div>
-            <div className="text-sm font-medium">Unique Applications</div>
+            <div className="text-sm font-medium text-stroke-thin-white">Unique Applications</div>
           </div>
           
           <div className="rounded-lg bg-black/60 backdrop-blur-sm p-4 text-white border border-green-400/30">
@@ -48,7 +48,7 @@ const HomepageHero = () => {
                 <Counter end={stats?.totalIndustries || 0} />
               )}
             </div>
-            <div className="text-sm font-medium">Industry Categories</div>
+            <div className="text-sm font-medium text-stroke-thin-white">Industry Categories</div>
           </div>
           
           <div className="rounded-lg bg-black/60 backdrop-blur-sm p-4 text-white border border-green-400/30">
@@ -59,7 +59,7 @@ const HomepageHero = () => {
                 <Counter end={stats?.totalPlantParts || 0} />
               )}
             </div>
-            <div className="text-sm font-medium">Plant Components</div>
+            <div className="text-sm font-medium text-stroke-thin-white">Plant Components</div>
           </div>
         </div>
       </div>
