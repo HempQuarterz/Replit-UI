@@ -6,9 +6,17 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { PlantType } from "@shared/schema";
+import { useState, useEffect } from "react";
 
 const PlantTypesPage = () => {
-  const { data: plantTypes, isLoading } = usePlantTypes();
+  const { data: plantTypesData, isLoading } = usePlantTypes();
+  const [plantTypes, setPlantTypes] = useState<PlantType[]>([]);
+  
+  useEffect(() => {
+    if (plantTypesData) {
+      setPlantTypes(plantTypesData as PlantType[]);
+    }
+  }, [plantTypesData]);
 
   return (
     <>
@@ -65,7 +73,7 @@ const PlantTypesPage = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {plantTypes?.map((plantType: PlantType) => (
+              {plantTypes.map((plantType: PlantType) => (
                 <div key={plantType.id} className="relative group">
                   <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out group-hover:shadow-lg">
                     <img 
