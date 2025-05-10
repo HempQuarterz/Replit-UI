@@ -21,45 +21,45 @@ const HomepageHero = () => {
       
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-green-300 text-stroke-white drop-shadow-lg">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-green-400 text-stroke-white drop-shadow-lg">
           Interactive Industrial Hemp Database
         </h1>
-        <p className="mt-3 max-w-md mx-auto text-lg text-white/90 sm:text-xl md:mt-5 md:max-w-3xl drop-shadow-md">
+        <p className="mt-3 max-w-md mx-auto text-lg text-white sm:text-xl md:mt-5 md:max-w-3xl drop-shadow-md font-medium">
           Explore the versatile applications of industrial hemp across industries, plant parts, and product categories.
         </p>
         
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-          <div className="rounded-lg bg-black/40 backdrop-blur-sm p-4 text-white border border-green-400/20">
-            <div className="text-2xl font-bold text-green-300 text-stroke-white">
+          <div className="rounded-lg bg-black/60 backdrop-blur-sm p-4 text-white border border-green-400/30">
+            <div className="text-2xl font-bold text-green-400 text-stroke-white">
               {isLoading ? (
                 <span className="opacity-50">Loading...</span>
               ) : (
                 <Counter end={stats?.totalProducts || 0} suffix="+" />
               )}
             </div>
-            <div className="text-sm">Unique Applications</div>
+            <div className="text-sm font-medium">Unique Applications</div>
           </div>
           
-          <div className="rounded-lg bg-black/40 backdrop-blur-sm p-4 text-white border border-green-400/20">
-            <div className="text-2xl font-bold text-green-300 text-stroke-white">
+          <div className="rounded-lg bg-black/60 backdrop-blur-sm p-4 text-white border border-green-400/30">
+            <div className="text-2xl font-bold text-green-400 text-stroke-white">
               {isLoading ? (
                 <span className="opacity-50">Loading...</span>
               ) : (
                 <Counter end={stats?.totalIndustries || 0} />
               )}
             </div>
-            <div className="text-sm">Industry Categories</div>
+            <div className="text-sm font-medium">Industry Categories</div>
           </div>
           
-          <div className="rounded-lg bg-black/40 backdrop-blur-sm p-4 text-white border border-green-400/20">
-            <div className="text-2xl font-bold text-green-300 text-stroke-white">
+          <div className="rounded-lg bg-black/60 backdrop-blur-sm p-4 text-white border border-green-400/30">
+            <div className="text-2xl font-bold text-green-400 text-stroke-white">
               {isLoading ? (
                 <span className="opacity-50">Loading...</span>
               ) : (
                 <Counter end={stats?.totalPlantParts || 0} />
               )}
             </div>
-            <div className="text-sm">Plant Components</div>
+            <div className="text-sm font-medium">Plant Components</div>
           </div>
         </div>
       </div>

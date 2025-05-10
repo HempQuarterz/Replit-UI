@@ -60,7 +60,8 @@
 
 @layer utilities {
   .text-stroke-white {
-    -webkit-text-stroke: 0.5px white;
-    text-stroke: 0.5px white;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+    text-stroke: 1px rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   }
 }
