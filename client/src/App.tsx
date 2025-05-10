@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import HomePage from "@/pages/home";
+import AboutPage from "@/pages/about";
 import PlantPartsPage from "@/pages/plant-parts";
 import PlantTypePage from "@/pages/plant-type";
 import PlantPartPage from "@/pages/plant-part";
@@ -18,6 +19,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
+      <Route path="/about" component={AboutPage} />
       <Route path="/plant-parts" component={PlantPartsPage} />
       <Route path="/plant-type/:id" component={PlantTypePage} />
       <Route path="/plant-part/:id" component={PlantPartPage} />
