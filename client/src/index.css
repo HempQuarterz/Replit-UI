@@ -66,8 +66,8 @@
   }
   
   .text-stroke-thin-white {
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.4);
-    text-stroke: 0.5px rgba(255, 255, 255, 0.4);
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.6);
+    text-stroke: 0.5px rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   }
 }
