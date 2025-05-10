@@ -3,18 +3,32 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { DatabaseStorage } from "./storage-db";
 import { z } from "zod";
-import { insertPlantTypeSchema, insertPlantPartSchema, insertIndustrySchema, insertSubIndustrySchema, insertHempProductSchema } from "@shared/schema";
+import { insertPlantTypeSchema, insertPlantPartSchema, insertIndustrySchema, insertSubIndustrySchema, insertHempProductSchema, plantTypes } from "@shared/schema";
 import { log } from "./vite";
+import { db } from "./db";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Initialize the database if needed
-  if (storage instanceof DatabaseStorage) {
-    try {
-      log("Initializing database if empty...");
-      await (storage as DatabaseStorage).initializeData();
-    } catch (error) {
-      console.error("Error initializing database:", error);
+  try {
+    log("Initializing database if empty...");
+    const existingData = await db.select().from(plantTypes);
+    
+    // Only initialize if we only have the test data or no data
+    if (existingData.length <= 1) {
+      log("Adding sample data to database...");
+      
+      // Check if initializeData method exists on the storage object
+      if (typeof storage.initializeData === 'function') {
+        await storage.initializeData();
+        log("Database initialization completed.");
+      } else {
+        log("Storage implementation doesn't have an initializeData method, skipping initialization.");
+      }
+    } else {
+      log("Database already contains data, skipping initialization.");
     }
+  } catch (error) {
+    console.error("Error initializing database:", error);
   }
 
   // API routes for the hemp database

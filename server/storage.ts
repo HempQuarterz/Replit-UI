@@ -6,7 +6,6 @@ import {
   subIndustries, type SubIndustry, type InsertSubIndustry,
   hempProducts, type HempProduct, type InsertHempProduct
 } from "@shared/schema";
-import { DatabaseStorage } from "./storage-db";
 
 // Storage interface
 export interface IStorage {
@@ -48,6 +47,9 @@ export interface IStorage {
   searchHempProducts(query: string): Promise<HempProduct[]>;
   getPaginatedHempProducts(page: number, limit: number, plantPartId?: number, industryId?: number): Promise<{products: HempProduct[], total: number}>;
   countTotalHempProducts(): Promise<number>;
+  
+  // Database initialization
+  initializeData?(): Promise<void>;
 }
 
 export class MemStorage implements IStorage {
@@ -84,7 +86,7 @@ export class MemStorage implements IStorage {
   }
 
   // Initialize with some sample data
-  private initializeData() {
+  async initializeData(): Promise<void> {
     // Sample plant types
     const fiberHemp = this.createPlantType({
       name: "Fiber Hemp",
@@ -497,8 +499,6 @@ export class MemStorage implements IStorage {
   }
 }
 
-// Use DatabaseStorage for production
+// Import storage implementation
 import { DatabaseStorage } from "./storage-db";
-
-// Use DatabaseStorage for production
 export const storage = new DatabaseStorage();
