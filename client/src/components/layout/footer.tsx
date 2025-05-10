@@ -15,8 +15,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <h3 className="text-xl font-heading font-bold mb-4">HempDB</h3>
-            <p className="text-neutral-light mb-6">
+            <h3 className="text-xl font-heading font-bold mb-4 text-outline-white">HempDB</h3>
+            <p className="text-neutral-light mb-6 text-outline-white">
               A comprehensive database of industrial hemp applications across industries, showcasing the versatility and potential of this remarkable plant.
             </p>
             <div className="flex space-x-4">
@@ -33,31 +33,31 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-heading font-medium mb-4">Quick Links</h3>
+            <h3 className="text-lg font-heading font-medium mb-4 text-outline-white">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <Link href="/">
-                  <a className="text-neutral-light hover:text-white transition-colors">Home</a>
+                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">Home</a>
                 </Link>
               </li>
               <li>
                 <Link href="/about">
-                  <a className="text-neutral-light hover:text-white transition-colors">About Hemp</a>
+                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">About Hemp</a>
                 </Link>
               </li>
               <li>
                 <Link href="/plant-types">
-                  <a className="text-neutral-light hover:text-white transition-colors">Plant Types</a>
+                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">Plant Types</a>
                 </Link>
               </li>
               <li>
                 <Link href="/industries">
-                  <a className="text-neutral-light hover:text-white transition-colors">Industries</a>
+                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">Industries</a>
                 </Link>
               </li>
               <li>
                 <Link href="/legal">
-                  <a className="text-neutral-light hover:text-white transition-colors">Legal Status</a>
+                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">Legal Status</a>
                 </Link>
               </li>
               <li>
