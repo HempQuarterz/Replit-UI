@@ -21,7 +21,7 @@ const HomepageHero = () => {
       
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white text-stroke-white drop-shadow-lg">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-green-400 text-stroke-white drop-shadow-lg">
           Interactive Industrial Hemp Database
         </h1>
         <p className="mt-3 max-w-md mx-auto text-lg sm:text-xl md:mt-5 md:max-w-3xl font-medium glowing-text">
@@ -30,7 +30,7 @@ const HomepageHero = () => {
         
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
           <div className="rounded-lg bg-black/60 backdrop-blur-sm p-4 text-white border border-green-400/30">
-            <div className="text-2xl font-bold text-white text-stroke-white">
+            <div className="text-2xl font-bold text-green-400 text-stroke-white">
               {isLoading ? (
                 <span className="opacity-50">Loading...</span>
               ) : (
@@ -41,7 +41,7 @@ const HomepageHero = () => {
           </div>
           
           <div className="rounded-lg bg-black/60 backdrop-blur-sm p-4 text-white border border-green-400/30">
-            <div className="text-2xl font-bold text-white text-stroke-white">
+            <div className="text-2xl font-bold text-green-400 text-stroke-white">
               {isLoading ? (
                 <span className="opacity-50">Loading...</span>
               ) : (
@@ -52,7 +52,7 @@ const HomepageHero = () => {
           </div>
           
           <div className="rounded-lg bg-black/60 backdrop-blur-sm p-4 text-white border border-green-400/30">
-            <div className="text-2xl font-bold text-white text-stroke-white">
+            <div className="text-2xl font-bold text-green-400 text-stroke-white">
               {isLoading ? (
                 <span className="opacity-50">Loading...</span>
               ) : (
