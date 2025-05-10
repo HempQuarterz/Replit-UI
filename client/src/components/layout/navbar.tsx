@@ -21,14 +21,14 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/">
                 <img 
                   src={HempQuarterzLogo} 
                   alt="HempQuarterz Logo" 
-                  className="h-12 w-12 cursor-pointer rounded-full"
+                  className="h-16 w-16 cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
                 />
               </Link>
             </div>
@@ -91,7 +91,7 @@ const Navbar = () => {
                       <img 
                         src={HempQuarterzLogo} 
                         alt="HempQuarterz Logo" 
-                        className="h-12 w-12 cursor-pointer rounded-full"
+                        className="h-16 w-16 cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
                       />
                     </Link>
                   </div>
