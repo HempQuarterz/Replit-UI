@@ -6,6 +6,7 @@ import {
   subIndustries, type SubIndustry, type InsertSubIndustry,
   hempProducts, type HempProduct, type InsertHempProduct
 } from "@shared/schema";
+import { DatabaseStorage } from "./storage-db";
 
 // Storage interface
 export interface IStorage {
@@ -496,4 +497,5 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+// Use DatabaseStorage for production
+export const storage = new DatabaseStorage();
