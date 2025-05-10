@@ -66,7 +66,7 @@ const IndustriesPage = () => {
       {/* Hero section */}
       <div className="bg-primary-50 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-neutral-darkest">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-green-700 text-outline-black">
             Industrial Hemp Industry Applications
           </h1>
           <p className="mt-4 text-lg text-neutral-dark max-w-3xl mx-auto">

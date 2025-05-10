@@ -40,7 +40,7 @@ const PlantPartsPage = () => {
       {/* Hero section */}
       <div className="bg-green-50 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-neutral-darkest">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-green-700 text-outline-black">
             Hemp Plant Parts
           </h1>
           <p className="mt-4 text-lg text-neutral-dark max-w-3xl mx-auto">
@@ -52,7 +52,7 @@ const PlantPartsPage = () => {
       {/* Plant parts grid */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-neutral-darkest mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-green-700 text-outline-black mb-12 text-center">
             Select a Plant Part
           </h2>
 
@@ -83,7 +83,7 @@ const PlantPartsPage = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 p-6">
-                      <h3 className="text-xl font-heading font-semibold text-white">{plantType.name}</h3>
+                      <h3 className="text-xl font-heading font-semibold text-white text-outline-white">{plantType.name}</h3>
                       <p className="mt-2 text-sm text-white/80 line-clamp-3">{plantType.description}</p>
                     </div>
                   </div>
@@ -100,7 +100,7 @@ const PlantPartsPage = () => {
       {/* Plant parts comparison */}
       <div className="bg-neutral-lightest py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-neutral-darkest mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-green-700 text-outline-black mb-12 text-center">
             Hemp Plant Parts Comparison
           </h2>
           
