@@ -45,7 +45,7 @@ const Navbar = () => {
               </Link>
               <Link href="/plant-types">
                 <a className={`${location.startsWith('/plant-type') ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-sm font-medium`}>
-                  Plant Types
+                  Parts of Plant
                 </a>
               </Link>
               <Link href="/industries">
@@ -130,7 +130,7 @@ const Navbar = () => {
                       </Link>
                       <Link href="/plant-types">
                         <a className={`${location.startsWith('/plant-type') ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-base`}>
-                          Plant Types
+                          Parts of Plant
                         </a>
                       </Link>
                       <Link href="/industries">
