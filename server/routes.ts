@@ -1,10 +1,22 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { DatabaseStorage } from "./storage-db";
 import { z } from "zod";
 import { insertPlantTypeSchema, insertPlantPartSchema, insertIndustrySchema, insertSubIndustrySchema, insertHempProductSchema } from "@shared/schema";
+import { log } from "./vite";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Initialize the database if needed
+  if (storage instanceof DatabaseStorage) {
+    try {
+      log("Initializing database if empty...");
+      await (storage as DatabaseStorage).initializeData();
+    } catch (error) {
+      console.error("Error initializing database:", error);
+    }
+  }
+
   // API routes for the hemp database
   app.get("/api/plant-types", async (req, res) => {
     try {
