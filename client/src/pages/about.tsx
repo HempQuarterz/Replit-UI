@@ -41,7 +41,7 @@ const AboutPage = () => {
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg prose-green max-w-none">
-            <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-neutral-darkest mb-6">Executive Summary</h2>
+            <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-green-700 text-outline-black mb-6">Executive Summary</h2>
             <p>
               Industrial hemp, a crop with a rich history dating back millennia, stands at the cusp of
               a significant resurgence due to its remarkable versatility. From its foundational uses in
@@ -63,7 +63,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="prose prose-lg prose-green">
-              <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-neutral-darkest mb-6">Introduction</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-green-700 text-outline-black mb-6">Introduction</h2>
               <p>
                 Industrial hemp, scientifically classified as a variety of the Cannabis sativa plant
                 species, is distinguished primarily by its exceptionally low concentration of
@@ -94,7 +94,7 @@ const AboutPage = () => {
       {/* Historical timeline */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-neutral-darkest mb-12 text-center">A Journey Through Time: Historical Uses of Hemp</h2>
+          <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-green-700 text-outline-black mb-12 text-center">A Journey Through Time: Historical Uses of Hemp</h2>
           
           <div className="relative border-l-4 border-green-400 ml-6 space-y-10 pl-10 py-4">
             {/* Timeline items */}
@@ -102,7 +102,7 @@ const AboutPage = () => {
               <div className="absolute -left-14 w-8 h-8 rounded-full bg-green-600 flex items-center justify-center">
                 <span className="text-white font-bold text-sm">1</span>
               </div>
-              <h3 className="text-xl font-heading font-semibold text-neutral-darkest">Ancient Beginnings (8000 BCE)</h3>
+              <h3 className="text-xl font-heading font-semibold text-green-700 text-outline-black">Ancient Beginnings (8000 BCE)</h3>
               <p className="mt-2 text-neutral-dark">
                 The earliest tangible evidence points to hemp's use approximately 10,000 years ago. 
                 Archaeological findings in ancient Mesopotamia (present-day Iraq), dating back to around 8000 BCE, 
@@ -114,7 +114,7 @@ const AboutPage = () => {
               <div className="absolute -left-14 w-8 h-8 rounded-full bg-green-600 flex items-center justify-center">
                 <span className="text-white font-bold text-sm">2</span>
               </div>
-              <h3 className="text-xl font-heading font-semibold text-neutral-darkest">Paper Innovation (150 BCE)</h3>
+              <h3 className="text-xl font-heading font-semibold text-green-700 text-outline-black">Paper Innovation (150 BCE)</h3>
               <p className="mt-2 text-neutral-dark">
                 A pivotal moment in the history of communication occurred around 150 BCE in China with 
                 the groundbreaking invention of paper made entirely from hemp fibers. This innovation 
@@ -126,7 +126,7 @@ const AboutPage = () => {
               <div className="absolute -left-14 w-8 h-8 rounded-full bg-green-600 flex items-center justify-center">
                 <span className="text-white font-bold text-sm">3</span>
               </div>
-              <h3 className="text-xl font-heading font-semibold text-neutral-darkest">Age of Exploration (1492)</h3>
+              <h3 className="text-xl font-heading font-semibold text-green-700 text-outline-black">Age of Exploration (1492)</h3>
               <p className="mt-2 text-neutral-dark">
                 During the Age of Exploration, in 1492, Christopher Columbus's ships, which famously 
                 embarked on voyages to North America, relied heavily on hemp for their sails and rigging. 
@@ -139,7 +139,7 @@ const AboutPage = () => {
               <div className="absolute -left-14 w-8 h-8 rounded-full bg-green-600 flex items-center justify-center">
                 <span className="text-white font-bold text-sm">4</span>
               </div>
-              <h3 className="text-xl font-heading font-semibold text-neutral-darkest">American History (1776)</h3>
+              <h3 className="text-xl font-heading font-semibold text-green-700 text-outline-black">American History (1776)</h3>
               <p className="mt-2 text-neutral-dark">
                 The Declaration of Independence, a foundational document in American history, was drafted on 
                 hemp paper in 1776, further symbolizing the plant's intimate connection to the birth of the nation. 
