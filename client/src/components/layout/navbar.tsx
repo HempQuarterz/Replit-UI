@@ -102,7 +102,7 @@ const Navbar = () => {
                         <Input
                           type="text"
                           placeholder="Search hemp uses..."
-                          className="w-full rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                          className="w-full rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base"
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                         />
@@ -129,12 +129,12 @@ const Navbar = () => {
                         </a>
                       </Link>
                       <Link href="/plant-parts">
-                        <a className={`${location.startsWith('/plant-part') ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-base`}>
+                        <a className={`${location.startsWith('/plant-part') ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-lg`}>
                           Parts of Plant
                         </a>
                       </Link>
                       <Link href="/industries">
-                        <a className={`${location === '/industries' ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-base`}>
+                        <a className={`${location === '/industries' ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-lg`}>
                           Industries
                         </a>
                       </Link>
