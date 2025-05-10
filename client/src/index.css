@@ -57,3 +57,10 @@
     @apply font-sans antialiased bg-background;
   }
 }
+
+@layer utilities {
+  .text-stroke-white {
+    -webkit-text-stroke: 0.5px white;
+    text-stroke: 0.5px white;
+  }
+}
