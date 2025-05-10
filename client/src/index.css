@@ -21,6 +21,27 @@
   }
 }
 
+/* Add text outline utility classes */
+@layer utilities {
+  /* For text on dark backgrounds */
+  .text-outline-white {
+    text-shadow: 
+      -1px -1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px 1px 0 #fff;
+  }
+  
+  /* For text on light backgrounds */
+  .text-outline-black {
+    text-shadow: 
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+}
+
 :root {
       --background: 0 0% 100%;
 --foreground: 20 14.3% 4.1%;
