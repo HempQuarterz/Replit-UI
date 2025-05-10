@@ -21,35 +21,35 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+        <div className="flex justify-between h-24">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/">
                 <img 
                   src={HempQuarterzLogo} 
                   alt="HempQuarterz Logo" 
-                  className="h-16 w-16 cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="h-20 w-20 cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
                 />
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <Link href="/">
-                <a className={`${location === '/' ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-sm font-medium`}>
+                <a className={`${location === '/' ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium`}>
                   Home
                 </a>
               </Link>
               <Link href="/about">
-                <a className={`${location === '/about' ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-sm font-medium`}>
+                <a className={`${location === '/about' ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium`}>
                   About
                 </a>
               </Link>
               <Link href="/plant-parts">
-                <a className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-sm font-medium`}>
-                  Parts of Plant
+                <a className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium text-center`}>
+                  Parts of<br/>Plant
                 </a>
               </Link>
               <Link href="/industries">
-                <a className={`${location === '/industries' ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-sm font-medium`}>
+                <a className={`${location === '/industries' ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium`}>
                   Industries
                 </a>
               </Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
               <Input
                 type="text"
                 placeholder="Search hemp uses..."
-                className="w-64 rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-56 rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -91,7 +91,7 @@ const Navbar = () => {
                       <img 
                         src={HempQuarterzLogo} 
                         alt="HempQuarterz Logo" 
-                        className="h-16 w-16 cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+                        className="h-20 w-20 cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
                       />
                     </Link>
                   </div>
@@ -119,12 +119,12 @@ const Navbar = () => {
                     
                     <nav className="flex flex-col space-y-4">
                       <Link href="/">
-                        <a className={`${location === '/' ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-base`}>
+                        <a className={`${location === '/' ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-lg`}>
                           Home
                         </a>
                       </Link>
                       <Link href="/about">
-                        <a className={`${location === '/about' ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-base`}>
+                        <a className={`${location === '/about' ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-lg`}>
                           About
                         </a>
                       </Link>
