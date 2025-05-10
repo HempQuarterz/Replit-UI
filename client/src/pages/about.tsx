@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import HempBrainImage from "@/assets/hemp-brain-image.jpg";
+import HempEcosystemImage from "@/assets/hemp-ecosystem.webp";
 
 const AboutPage = () => {
   return (
@@ -82,8 +82,8 @@ const AboutPage = () => {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
-                src={HempBrainImage} 
-                alt="Digital brain with hemp uses" 
+                src={HempEcosystemImage} 
+                alt="Comprehensive hemp ecosystem illustration showing various applications and uses" 
                 className="w-full h-auto object-cover"
               />
             </div>
