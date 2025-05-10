@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import HempQuarterzLogo from "@/assets/hemp-quarterz-logo.jpg";
+import HempQuarterzLogo from "@/assets/logo-circle.png";
 
 const Navbar = () => {
   const [location] = useLocation();
@@ -28,7 +28,7 @@ const Navbar = () => {
                 <img 
                   src={HempQuarterzLogo} 
                   alt="HempQuarterz Logo" 
-                  className="h-10 w-auto cursor-pointer"
+                  className="h-12 w-12 cursor-pointer rounded-full"
                 />
               </Link>
             </div>
@@ -91,7 +91,7 @@ const Navbar = () => {
                       <img 
                         src={HempQuarterzLogo} 
                         alt="HempQuarterz Logo" 
-                        className="h-10 w-auto cursor-pointer"
+                        className="h-12 w-12 cursor-pointer rounded-full"
                       />
                     </Link>
                   </div>
