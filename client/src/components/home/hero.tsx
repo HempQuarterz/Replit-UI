@@ -24,7 +24,7 @@ const HomepageHero = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-green-400 text-stroke-white drop-shadow-lg">
           Interactive Industrial Hemp Database
         </h1>
-        <p className="mt-3 max-w-md mx-auto text-lg text-purple-200 sm:text-xl md:mt-5 md:max-w-3xl drop-shadow-md font-medium text-stroke-thin-white">
+        <p className="mt-3 max-w-md mx-auto text-lg sm:text-xl md:mt-5 md:max-w-3xl font-medium glowing-text">
           Explore the versatile applications of industrial hemp across industries, plant parts, and product categories.
         </p>
         
