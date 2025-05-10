@@ -78,7 +78,7 @@ const IndustriesPage = () => {
       {/* Industries grid */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-neutral-darkest mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-green-700 text-outline-black mb-12 text-center">
             Explore Industries Using Hemp
           </h2>
 
@@ -104,7 +104,7 @@ const IndustriesPage = () => {
                       <span className="text-4xl mr-3" role="img" aria-label={industry.name}>
                         {industryIcons[industry.name] || "🌿"}
                       </span>
-                      <h3 className="text-xl font-heading font-semibold text-neutral-darkest">{industry.name}</h3>
+                      <h3 className="text-xl font-heading font-semibold text-green-700 text-outline-black">{industry.name}</h3>
                     </div>
                     <p className="text-neutral-dark mb-6">
                       {industryDescriptions[industry.name] || 
@@ -127,20 +127,20 @@ const IndustriesPage = () => {
       {/* Industry stats section */}
       <div className="bg-neutral-lightest py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-neutral-darkest mb-12">
+          <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-green-700 text-outline-black mb-12">
             Hemp Industry Growth
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg shadow-sm p-8">
-              <div className="text-4xl font-bold text-primary mb-2">35%</div>
+              <div className="text-4xl font-bold text-green-600 text-outline-black mb-2">35%</div>
               <p className="text-neutral-dark">Annual growth in the hemp textiles market</p>
             </div>
             <div className="bg-white rounded-lg shadow-sm p-8">
-              <div className="text-4xl font-bold text-primary mb-2">$15B</div>
+              <div className="text-4xl font-bold text-green-600 text-outline-black mb-2">$15B</div>
               <p className="text-neutral-dark">Projected global hemp market by 2027</p>
             </div>
             <div className="bg-white rounded-lg shadow-sm p-8">
-              <div className="text-4xl font-bold text-primary mb-2">25+</div>
+              <div className="text-4xl font-bold text-green-600 text-outline-black mb-2">25+</div>
               <p className="text-neutral-dark">Major industries using hemp materials</p>
             </div>
           </div>
