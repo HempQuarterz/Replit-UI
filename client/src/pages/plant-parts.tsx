@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/breadcrumb";
 import { PlantType } from "@shared/schema";
 import { useState, useEffect } from "react";
 
-const PlantTypesPage = () => {
+const PlantPartsPage = () => {
   const { data: plantTypesData, isLoading } = usePlantTypes();
   const [plantTypes, setPlantTypes] = useState<PlantType[]>([]);
   
@@ -197,4 +197,4 @@ const PlantTypesPage = () => {
   );
 };
 
-export default PlantTypesPage;
+export default PlantPartsPage;

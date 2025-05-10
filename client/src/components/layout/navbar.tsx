@@ -43,8 +43,8 @@ const Navbar = () => {
                   About
                 </a>
               </Link>
-              <Link href="/plant-types">
-                <a className={`${location.startsWith('/plant-type') ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-sm font-medium`}>
+              <Link href="/plant-parts">
+                <a className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-neutral-dark hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-sm font-medium`}>
                   Parts of Plant
                 </a>
               </Link>
@@ -128,8 +128,8 @@ const Navbar = () => {
                           About
                         </a>
                       </Link>
-                      <Link href="/plant-types">
-                        <a className={`${location.startsWith('/plant-type') ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-base`}>
+                      <Link href="/plant-parts">
+                        <a className={`${location.startsWith('/plant-part') ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-base`}>
                           Parts of Plant
                         </a>
                       </Link>
