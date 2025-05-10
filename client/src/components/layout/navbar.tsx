@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import HempQuarterzLogo from "@/assets/hemp-quarterz-logo.jpg";
 
 const Navbar = () => {
   const [location] = useLocation();
@@ -24,7 +25,11 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/">
-                <span className="text-primary font-heading font-bold text-xl cursor-pointer">HempDB</span>
+                <img 
+                  src={HempQuarterzLogo} 
+                  alt="HempQuarterz Logo" 
+                  className="h-10 w-auto cursor-pointer"
+                />
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -83,7 +88,11 @@ const Navbar = () => {
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between pb-4 border-b">
                     <Link href="/">
-                      <span className="text-primary font-heading font-bold text-xl cursor-pointer">HempDB</span>
+                      <img 
+                        src={HempQuarterzLogo} 
+                        alt="HempQuarterz Logo" 
+                        className="h-10 w-auto cursor-pointer"
+                      />
                     </Link>
                   </div>
                   
