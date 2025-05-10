@@ -73,8 +73,6 @@
   
   .glowing-text {
     color: white !important;
-    -webkit-text-stroke: 1px rgba(0, 128, 0, 0.8);
-    text-stroke: 1px rgba(0, 128, 0, 0.8);
     text-shadow: 
       0 0 5px rgba(255, 255, 255, 1),
       0 0 10px rgba(255, 255, 255, 0.8),
@@ -87,8 +85,6 @@
   
   @keyframes pulse {
     from {
-      -webkit-text-stroke: 1px rgba(0, 180, 0, 0.8);
-      text-stroke: 1px rgba(0, 180, 0, 0.8);
       text-shadow: 
         0 0 5px rgba(255, 255, 255, 1),
         0 0 10px rgba(255, 255, 255, 0.8),
@@ -96,8 +92,6 @@
         0 0 20px rgba(255, 255, 255, 0.4);
     }
     to {
-      -webkit-text-stroke: 1px rgba(0, 255, 0, 0.9);
-      text-stroke: 1px rgba(0, 255, 0, 0.9);
       text-shadow: 
         0 0 10px rgba(255, 255, 255, 1),
         0 0 20px rgba(255, 255, 255, 0.9),
