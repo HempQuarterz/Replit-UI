@@ -62,15 +62,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/resources">
-                  <a className="text-neutral-light hover:text-white transition-colors">Research Resources</a>
+                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">Research Resources</a>
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-heading font-medium mb-4">Subscribe</h3>
-            <p className="text-neutral-light mb-4">
+            <h3 className="text-lg font-heading font-medium mb-4 text-outline-white">Subscribe</h3>
+            <p className="text-neutral-light mb-4 text-outline-white">
               Join our newsletter to receive updates on new hemp applications and industry developments.
             </p>
             <form onSubmit={handleSubscribe} className="mb-4">
@@ -88,23 +88,23 @@ const Footer = () => {
                 </Button>
               </div>
             </form>
-            <p className="text-xs text-neutral-medium">
+            <p className="text-xs text-neutral-medium text-outline-white">
               By subscribing, you agree to our Privacy Policy and consent to receive updates from HempDB.
             </p>
           </div>
         </div>
         
         <div className="mt-12 pt-8 border-t border-neutral-dark text-neutral-medium flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-sm">© {new Date().getFullYear()} HempDB. All rights reserved.</p>
+          <p className="text-sm text-outline-white">© {new Date().getFullYear()} HempDB. All rights reserved.</p>
           <div className="mt-4 sm:mt-0 flex space-x-6">
             <Link href="/privacy">
-              <a className="text-sm text-neutral-medium hover:text-white transition-colors">Privacy Policy</a>
+              <a className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white">Privacy Policy</a>
             </Link>
             <Link href="/terms">
-              <a className="text-sm text-neutral-medium hover:text-white transition-colors">Terms of Service</a>
+              <a className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white">Terms of Service</a>
             </Link>
             <Link href="/contact">
-              <a className="text-sm text-neutral-medium hover:text-white transition-colors">Contact</a>
+              <a className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white">Contact</a>
             </Link>
           </div>
         </div>
