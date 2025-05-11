@@ -2,9 +2,11 @@ import { usePlantTypes } from "@/hooks/use-plant-data";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { PlantType } from "@shared/schema";
 
 const PlantTypeCards = () => {
-  const { data: plantTypes, isLoading } = usePlantTypes();
+  const { data: plantTypesData, isLoading } = usePlantTypes();
+  const plantTypes = Array.isArray(plantTypesData) ? plantTypesData : [];
 
   return (
     <div className="py-12 bg-white">
@@ -31,7 +33,7 @@ const PlantTypeCards = () => {
           </div>
         ) : (
           <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-5xl lg:mx-auto">
-            {plantTypes?.map((plantType) => (
+            {plantTypes.map((plantType: PlantType) => (
               <div key={plantType.id} className="relative group">
                 <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out group-hover:shadow-lg">
                   <img 
@@ -46,7 +48,7 @@ const PlantTypeCards = () => {
                   </div>
                 </div>
                 <Link href={`/plant-type/${plantType.id}`}>
-                  <a className="absolute inset-0 z-10 block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label={`View ${plantType.name} applications`}></a>
+                  <div className="absolute inset-0 z-10 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label={`View ${plantType.name} applications`}></div>
                 </Link>
               </div>
             ))}

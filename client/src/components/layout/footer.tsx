@@ -37,32 +37,32 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link href="/">
-                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">Home</a>
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Home</div>
                 </Link>
               </li>
               <li>
                 <Link href="/about">
-                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">About Hemp</a>
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">About Hemp</div>
                 </Link>
               </li>
               <li>
-                <Link href="/plant-types">
-                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">Plant Types</a>
+                <Link href="/plant-parts">
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Parts of Plant</div>
                 </Link>
               </li>
               <li>
                 <Link href="/industries">
-                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">Industries</a>
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Industries</div>
                 </Link>
               </li>
               <li>
                 <Link href="/legal">
-                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">Legal Status</a>
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Legal Status</div>
                 </Link>
               </li>
               <li>
                 <Link href="/resources">
-                  <a className="text-neutral-light hover:text-white transition-colors text-outline-white">Research Resources</a>
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Research Resources</div>
                 </Link>
               </li>
             </ul>
@@ -98,13 +98,13 @@ const Footer = () => {
           <p className="text-sm text-outline-white">© {new Date().getFullYear()} HempDB. All rights reserved.</p>
           <div className="mt-4 sm:mt-0 flex space-x-6">
             <Link href="/privacy">
-              <a className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white">Privacy Policy</a>
+              <div className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white cursor-pointer">Privacy Policy</div>
             </Link>
             <Link href="/terms">
-              <a className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white">Terms of Service</a>
+              <div className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white cursor-pointer">Terms of Service</div>
             </Link>
             <Link href="/contact">
-              <a className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white">Contact</a>
+              <div className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white cursor-pointer">Contact</div>
             </Link>
           </div>
         </div>
