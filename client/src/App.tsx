@@ -9,6 +9,7 @@ import Footer from "@/components/layout/footer";
 import HomePage from "@/pages/home";
 import AboutPage from "@/pages/about";
 import PlantPartsPage from "@/pages/plant-parts";
+import PlantTypesListPage from "@/pages/plant-types-list";
 import PlantTypePage from "@/pages/plant-type";
 import PlantPartPage from "@/pages/plant-part";
 import ProductListingPage from "@/pages/product-listing";
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/" component={HomePage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/plant-parts" component={PlantPartsPage} />
+      <Route path="/plant-types" component={PlantTypesListPage} />
       <Route path="/plant-type/:id" component={PlantTypePage} />
       <Route path="/plant-part/:id" component={PlantPartPage} />
       <Route path="/products/:plantPartId/:industryId?" component={ProductListingPage} />

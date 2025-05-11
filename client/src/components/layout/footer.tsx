@@ -46,6 +46,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/plant-types">
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Plant Types</div>
+                </Link>
+              </li>
+              <li>
                 <Link href="/plant-parts">
                   <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Parts of Plant</div>
                 </Link>

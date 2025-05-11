@@ -43,6 +43,11 @@ const Navbar = () => {
                   About
                 </div>
               </Link>
+              <Link href="/plant-types">
+                <div className={`${location === '/plant-types' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
+                  Plant Types
+                </div>
+              </Link>
               <Link href="/plant-parts">
                 <div className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
                   Parts of Plant
@@ -126,6 +131,11 @@ const Navbar = () => {
                       <Link href="/about">
                         <div className={`${location === '/about' ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-xl cursor-pointer`}>
                           About
+                        </div>
+                      </Link>
+                      <Link href="/plant-types">
+                        <div className={`${location === '/plant-types' ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-xl cursor-pointer`}>
+                          Plant Types
                         </div>
                       </Link>
                       <Link href="/plant-parts">
