@@ -22,9 +22,9 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
             
             {item.href && index < items.length - 1 ? (
               <Link href={item.href}>
-                <a className="text-neutral-medium hover:text-primary ml-2">
+                <div className="text-neutral-medium hover:text-primary ml-2 cursor-pointer">
                   {item.label}
-                </a>
+                </div>
               </Link>
             ) : (
               <span className={`${index > 0 ? "ml-2" : ""} ${index === items.length - 1 ? "text-neutral-dark font-medium" : "text-neutral-medium hover:text-primary"}`}>
