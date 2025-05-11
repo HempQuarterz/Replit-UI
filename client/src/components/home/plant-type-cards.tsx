@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { PlantType } from "@shared/schema";
+import SimpleHempModel from "@/components/models/SimpleHempModel";
 
 const PlantTypeCards = () => {
   const { data: plantTypesData, isLoading } = usePlantTypes();
@@ -41,11 +42,19 @@ const PlantTypeCards = () => {
             {plantTypes.map((plantType: PlantType) => (
               <div key={plantType.id} className="relative group">
                 <div className="relative h-80 w-full overflow-hidden rounded-lg bg-black border border-green-500/30 shadow-[0_0_15px_rgba(0,255,0,0.3)] transition-all duration-300 ease-in-out group-hover:shadow-[0_0_25px_rgba(0,255,0,0.5)]">
-                  <img 
-                    src={plantType.imageUrl || 'https://via.placeholder.com/800x1000'} 
-                    alt={`${plantType.name} plant`} 
-                    className="h-full w-full object-cover opacity-80 transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-90"
-                  />
+                  {plantType.id === 1 ? (
+                    <div className="h-full w-full">
+                      <SimpleHempModel
+                        className="h-full w-full opacity-80 transition-all duration-500 ease-in-out group-hover:opacity-90"
+                      />
+                    </div>
+                  ) : (
+                    <img 
+                      src={plantType.imageUrl || 'https://via.placeholder.com/800x1000'} 
+                      alt={`${plantType.name} plant`} 
+                      className="h-full w-full object-cover opacity-80 transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-90"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/30 mix-blend-multiply"></div>
                   {/* Matrix-like overlay on hover */}
                   <div className="absolute inset-0 bg-matrix-effect opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
