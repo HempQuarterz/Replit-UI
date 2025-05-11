@@ -55,7 +55,9 @@ const PlantTypeCards = () => {
                       className="h-full w-full object-cover opacity-80 transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-90"
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/30 mix-blend-multiply"></div>
+                  {plantType.id !== 1 && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/30 mix-blend-multiply"></div>
+                  )}
                   {/* Matrix-like overlay on hover */}
                   <div className="absolute inset-0 bg-matrix-effect opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
                   <div className="absolute bottom-0 left-0 p-6">
