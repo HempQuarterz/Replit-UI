@@ -26,10 +26,12 @@
   /* For text on dark backgrounds */
   .text-outline-white {
     text-shadow: 
-      -1px -1px 0 #fff,
-      1px -1px 0 #fff,
-      -1px 1px 0 #fff,
-      1px 1px 0 #fff;
+      -1.5px -1.5px 0 #fff,
+      1.5px -1.5px 0 #fff,
+      -1.5px 1.5px 0 #fff,
+      1.5px 1.5px 0 #fff,
+      0 0 6px rgba(255, 255, 255, 0.6),
+      0 0 10px rgba(255, 255, 255, 0.3);
   }
   
   /* For text on light backgrounds */
@@ -38,7 +40,8 @@
       -1px -1px 0 #000,
       1px -1px 0 #000,
       -1px 1px 0 #000,
-      1px 1px 0 #000;
+      1px 1px 0 #000,
+      0 0 5px rgba(0, 0, 0, 0.4);
   }
 }
 

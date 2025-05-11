@@ -18,7 +18,7 @@ const StatsCounter = () => {
   return (
     <div className="bg-primary py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-6">Explore All Hemp Applications</h2>
+        <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-6 text-outline-white">Explore All Hemp Applications</h2>
         <div className="max-w-3xl mx-auto">
           <form onSubmit={handleSearch} className="relative">
             <Input
@@ -34,15 +34,15 @@ const StatsCounter = () => {
           </form>
           
           <div className="mt-10 text-white">
-            <p className="text-lg sm:text-xl opacity-90 mb-3">Total Documented Hemp Applications:</p>
-            <div className="text-5xl sm:text-6xl font-bold">
+            <p className="text-lg sm:text-xl opacity-90 mb-3 text-outline-white">Total Documented Hemp Applications:</p>
+            <div className="text-5xl sm:text-6xl font-bold text-outline-white">
               {isLoading ? (
                 <span className="opacity-50">Loading...</span>
               ) : (
                 <Counter end={stats?.totalProducts || 0} suffix="+" duration={2500} />
               )}
             </div>
-            <p className="mt-4 text-sm sm:text-base opacity-80 max-w-2xl mx-auto">
+            <p className="mt-4 text-sm sm:text-base opacity-80 max-w-2xl mx-auto text-outline-white">
               Our database continues to grow as research uncovers new industrial hemp applications across various sectors. Check back regularly for the latest additions.
             </p>
           </div>
