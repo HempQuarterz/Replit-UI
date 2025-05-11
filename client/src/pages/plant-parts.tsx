@@ -88,7 +88,7 @@ const PlantPartsPage = () => {
                     </div>
                   </div>
                   <Link href={`/plant-type/${plantType.id}`}>
-                    <a className="absolute inset-0 z-10 block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label={`View ${plantType.name} applications`}></a>
+                    <div className="absolute inset-0 z-10 block cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label={`View ${plantType.name} applications`}></div>
                   </Link>
                 </div>
               ))}
