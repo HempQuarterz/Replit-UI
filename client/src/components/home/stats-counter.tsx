@@ -34,7 +34,7 @@ const StatsCounter = () => {
           </form>
           
           <div className="mt-10 text-white">
-            <p className="text-lg sm:text-xl opacity-90 mb-3 text-outline-white">Total Documented Hemp Applications:</p>
+            <p className="text-xl sm:text-2xl opacity-95 mb-3 text-outline-white font-medium">Total Documented Hemp Applications:</p>
             <div className="text-5xl sm:text-6xl font-bold text-outline-white">
               {isLoading ? (
                 <span className="opacity-50">Loading...</span>
@@ -42,7 +42,7 @@ const StatsCounter = () => {
                 <Counter end={stats?.totalProducts || 0} suffix="+" duration={2500} />
               )}
             </div>
-            <p className="mt-4 text-sm sm:text-base opacity-80 max-w-2xl mx-auto text-outline-white">
+            <p className="mt-4 text-base sm:text-lg md:text-xl opacity-95 max-w-2xl mx-auto text-outline-white font-medium">
               Our database continues to grow as research uncovers new industrial hemp applications across various sectors. Check back regularly for the latest additions.
             </p>
           </div>
