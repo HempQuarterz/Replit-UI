@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import HempQuarterzLogo from "@/assets/logo-circle.png";
+import HempQuarterzLogo from "@/assets/circle-logo.png";
 
 const Navbar = () => {
   const [location] = useLocation();
