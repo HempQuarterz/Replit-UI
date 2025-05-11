@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { usePlantType, usePlantParts } from "@/hooks/use-plant-data";
 import { Skeleton } from "@/components/ui/skeleton";
 import { InfoIcon } from "lucide-react";
+import { PlantPart } from "@shared/schema";
 import PlantPartSelector from "./plant-part-selector";
 
 interface PlantVisualizationProps {
@@ -66,7 +67,7 @@ const PlantVisualization = ({ plantTypeId }: PlantVisualizationProps) => {
               <ol className="flex items-center space-x-2">
                 <li>
                   <Link href="/">
-                    <a className="text-neutral-medium hover:text-primary">Home</a>
+                    <div className="text-neutral-medium hover:text-primary cursor-pointer">Home</div>
                   </Link>
                 </li>
                 <li className="flex items-center">
@@ -80,12 +81,12 @@ const PlantVisualization = ({ plantTypeId }: PlantVisualizationProps) => {
             <h2 className="text-2xl sm:text-3xl font-heading font-bold text-neutral-darkest mt-2">{plantType?.name} Plant Parts</h2>
           </div>
           <Link href="/">
-            <a className="text-primary hover:text-primary-dark font-medium flex items-center">
+            <div className="text-primary hover:text-primary-dark font-medium flex items-center cursor-pointer">
               <span>View Different Plant Type</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>
-            </a>
+            </div>
           </Link>
         </div>
 
@@ -101,7 +102,7 @@ const PlantVisualization = ({ plantTypeId }: PlantVisualizationProps) => {
                 />
                 
                 {/* Plant part overlays - this would be more dynamic in a real implementation */}
-                {plantParts?.slice(0, 3).map((part, index) => {
+                {plantParts?.slice(0, 3).map((part: PlantPart, index: number) => {
                   // Position the dots at different locations
                   const positions = [
                     'top-[10%] right-[20%]',
@@ -136,7 +137,7 @@ const PlantVisualization = ({ plantTypeId }: PlantVisualizationProps) => {
                       </div>
                       <div className="mt-2 text-center">
                         <Link href={`/plant-part/${part.id}`}>
-                          <a className="text-primary font-medium text-sm">{part.name}</a>
+                          <div className="text-primary font-medium text-sm cursor-pointer">{part.name}</div>
                         </Link>
                       </div>
                     </div>
