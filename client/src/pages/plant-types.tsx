@@ -88,7 +88,7 @@ const PlantTypesPage = () => {
                     </div>
                   </div>
                   <Link href={`/plant-type/${plantType.id}`}>
-                    <a className="absolute inset-0 z-10 block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label={`View ${plantType.name} applications`}></a>
+                    <div className="absolute inset-0 z-10 block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer" aria-label={`View ${plantType.name} applications`}></div>
                   </Link>
                 </div>
               ))}
@@ -187,9 +187,11 @@ const PlantTypesPage = () => {
             Discover how different parts of the hemp plant are utilized across various industries for sustainable solutions.
           </p>
           <Link href="/industries">
-            <Button className="bg-green-600 hover:bg-green-700 text-white">
-              Browse Industries
-            </Button>
+            <div className="inline-block">
+              <Button className="bg-green-600 hover:bg-green-700 text-white">
+                Browse Industries
+              </Button>
+            </div>
           </Link>
         </div>
       </div>
