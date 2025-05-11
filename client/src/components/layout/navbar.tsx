@@ -34,22 +34,22 @@ const Navbar = () => {
             </div>
             <div className="hidden sm:ml-4 sm:flex sm:space-x-4 items-center">
               <Link href="/">
-                <a className={`${location === '/' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium whitespace-nowrap`}>
+                <a className={`${location === '/' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-lg font-medium whitespace-nowrap`}>
                   Home
                 </a>
               </Link>
               <Link href="/about">
-                <a className={`${location === '/about' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium whitespace-nowrap`}>
+                <a className={`${location === '/about' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-lg font-medium whitespace-nowrap`}>
                   About
                 </a>
               </Link>
               <Link href="/plant-parts">
-                <a className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium whitespace-nowrap`}>
+                <a className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-lg font-medium whitespace-nowrap`}>
                   Parts of Plant
                 </a>
               </Link>
               <Link href="/industries">
-                <a className={`${location === '/industries' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium whitespace-nowrap`}>
+                <a className={`${location === '/industries' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-lg font-medium whitespace-nowrap`}>
                   Industries
                 </a>
               </Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
               <Input
                 type="text"
                 placeholder="Search..."
-                className="w-36 rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base"
+                className="w-36 rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -102,7 +102,7 @@ const Navbar = () => {
                         <Input
                           type="text"
                           placeholder="Search..."
-                          className="w-full rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base"
+                          className="w-full rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                         />
@@ -119,22 +119,22 @@ const Navbar = () => {
                     
                     <nav className="flex flex-col space-y-4">
                       <Link href="/">
-                        <a className={`${location === '/' ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-lg`}>
+                        <a className={`${location === '/' ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-xl`}>
                           Home
                         </a>
                       </Link>
                       <Link href="/about">
-                        <a className={`${location === '/about' ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-lg`}>
+                        <a className={`${location === '/about' ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-xl`}>
                           About
                         </a>
                       </Link>
                       <Link href="/plant-parts">
-                        <a className={`${location.startsWith('/plant-part') ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-lg`}>
+                        <a className={`${location.startsWith('/plant-part') ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-xl`}>
                           Parts of Plant
                         </a>
                       </Link>
                       <Link href="/industries">
-                        <a className={`${location === '/industries' ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-lg`}>
+                        <a className={`${location === '/industries' ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-xl`}>
                           Industries
                         </a>
                       </Link>
