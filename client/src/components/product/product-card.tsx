@@ -74,10 +74,10 @@ const ProductCard = ({ product, industryNames, subIndustryNames, plantPartNames 
         )}
         
         <Link href={`/product/${product.id}`}>
-          <a className="text-primary hover:text-primary-dark font-medium text-sm flex items-center">
+          <div className="text-primary hover:text-primary-dark font-medium text-sm flex items-center cursor-pointer">
             View Details
             <ArrowRight className="h-4 w-4 ml-1" />
-          </a>
+          </div>
         </Link>
       </CardContent>
     </Card>

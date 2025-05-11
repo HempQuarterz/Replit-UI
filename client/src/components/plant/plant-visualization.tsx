@@ -96,7 +96,10 @@ const PlantVisualization = ({ plantTypeId }: PlantVisualizationProps) => {
               {/* Interactive plant visualization */}
               <div className="relative w-full max-w-md">
                 <img 
-                  src={plantType?.imageUrl || 'https://via.placeholder.com/800x1000'} 
+                  src={plantType?.id === 1 
+                    ? "https://www.greenentrepreneur.com/wp-content/uploads/2024/01/hemp_field_aerial_view_a_field_of_industrial_hemp_plants_cannabis_sativa_1600.jpg" 
+                    : plantType?.imageUrl || 'https://via.placeholder.com/800x1000'
+                  } 
                   alt={`${plantType?.name} diagram`} 
                   className="w-full rounded-lg"
                 />

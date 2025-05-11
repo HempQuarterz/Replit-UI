@@ -82,7 +82,10 @@ const PlantTypesListPage = () => {
                 <Card key={plantType.id} className="overflow-hidden border border-green-200 hover:shadow-lg transition-shadow duration-300">
                   <div className="aspect-video relative">
                     <img 
-                      src={plantType.imageUrl || 'https://via.placeholder.com/800x450?text=Hemp+Plant+Type'} 
+                      src={plantType.id === 1 
+                        ? "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Hanffeld.jpg/1200px-Hanffeld.jpg" 
+                        : plantType.imageUrl || 'https://via.placeholder.com/800x450?text=Hemp+Plant+Type'
+                      } 
                       alt={`${plantType.name} plant type`}
                       className="h-full w-full object-cover"
                     />
