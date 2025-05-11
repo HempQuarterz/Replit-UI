@@ -21,9 +21,9 @@ const Navbar = () => {
   return (
     <nav className="bg-black shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-black">
-        <div className="flex justify-between h-24">
+        <div className="flex justify-between items-center h-24">
           <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center">
+            <div className="flex-shrink-0 flex items-center mr-2">
               <Link href="/">
                 <img 
                   src={HempQuarterzLogo} 
@@ -56,12 +56,12 @@ const Navbar = () => {
             </div>
           </div>
           
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
+          <div className="hidden sm:ml-10 sm:flex sm:items-center">
             <form onSubmit={handleSearch} className="relative">
               <Input
                 type="text"
-                placeholder="Search hemp uses..."
-                className="w-56 rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base"
+                placeholder="Search..."
+                className="w-44 rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -101,7 +101,7 @@ const Navbar = () => {
                       <div className="relative">
                         <Input
                           type="text"
-                          placeholder="Search hemp uses..."
+                          placeholder="Search..."
                           className="w-full rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base"
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
