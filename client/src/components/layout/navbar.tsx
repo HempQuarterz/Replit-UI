@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 bg-black">
         <div className="flex justify-between items-center h-28">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center mr-2">
@@ -56,7 +56,7 @@ const Navbar = () => {
             </div>
           </div>
           
-          <div className="hidden sm:ml-auto sm:flex sm:items-center">
+          <div className="hidden sm:ml-auto sm:flex sm:items-center sm:pl-12 pr-2">
             <form onSubmit={handleSearch} className="relative">
               <Input
                 type="text"
