@@ -32,11 +32,11 @@ const PlantPartSelector = ({ plantParts, activePart, onSelectPart }: PlantPartSe
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {plantParts.map((part) => (
         <Link key={part.id} href={`/plant-part/${part.id}`}>
-          <a 
+          <div 
             id={part.name.toLowerCase()}
             className={`flex items-center p-4 bg-white rounded-lg border ${
               activePart === part.id ? 'border-primary shadow-md' : 'border-neutral-light'
-            } hover:border-primary hover:shadow-md transition-all`}
+            } hover:border-primary hover:shadow-md transition-all cursor-pointer`}
             onClick={(e) => {
               // Allow the link to work but also update the active part
               e.preventDefault();
@@ -55,7 +55,7 @@ const PlantPartSelector = ({ plantParts, activePart, onSelectPart }: PlantPartSe
                   : part.description
               }</p>
             </div>
-          </a>
+          </div>
         </Link>
       ))}
     </div>
