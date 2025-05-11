@@ -71,7 +71,7 @@ const Navbar = () => {
                 size="icon" 
                 className="absolute inset-y-0 right-0 flex items-center pr-3"
               >
-                <Search className="h-5 w-5 text-neutral-medium" />
+                <Search className="h-5 w-5 text-white" />
               </Button>
             </form>
           </div>
@@ -79,14 +79,14 @@ const Navbar = () => {
           <div className="-mr-2 flex items-center sm:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="inline-flex items-center justify-center p-2 rounded-md text-neutral-dark hover:text-primary hover:bg-neutral-lightest focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                <Button variant="ghost" size="icon" className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-primary hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
                   <span className="sr-only">Open main menu</span>
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-black">
                 <div className="flex flex-col h-full">
-                  <div className="flex items-center justify-between pb-4 border-b">
+                  <div className="flex items-center justify-between pb-4 border-b border-gray-800">
                     <Link href="/">
                       <img 
                         src={HempQuarterzLogo} 
@@ -112,7 +112,7 @@ const Navbar = () => {
                           size="icon" 
                           className="absolute inset-y-0 right-0 flex items-center pr-3"
                         >
-                          <Search className="h-5 w-5 text-neutral-medium" />
+                          <Search className="h-5 w-5 text-white" />
                         </Button>
                       </div>
                     </form>
@@ -134,7 +134,7 @@ const Navbar = () => {
                         </a>
                       </Link>
                       <Link href="/industries">
-                        <a className={`${location === '/industries' ? 'text-primary font-medium' : 'text-neutral-dark'} hover:text-primary px-3 py-2 text-lg`}>
+                        <a className={`${location === '/industries' ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-lg`}>
                           Industries
                         </a>
                       </Link>
