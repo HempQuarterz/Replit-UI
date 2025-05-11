@@ -32,24 +32,24 @@ const Navbar = () => {
                 />
               </Link>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <div className="hidden sm:ml-6 sm:flex sm:space-x-6 items-center">
               <Link href="/">
-                <a className={`${location === '/' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium`}>
+                <a className={`${location === '/' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium whitespace-nowrap`}>
                   Home
                 </a>
               </Link>
               <Link href="/about">
-                <a className={`${location === '/about' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium`}>
+                <a className={`${location === '/about' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium whitespace-nowrap`}>
                   About
                 </a>
               </Link>
               <Link href="/plant-parts">
-                <a className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium text-center`}>
-                  Parts of<br/>Plant
+                <a className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium whitespace-nowrap`}>
+                  Parts of Plant
                 </a>
               </Link>
               <Link href="/industries">
-                <a className={`${location === '/industries' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium`}>
+                <a className={`${location === '/industries' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium whitespace-nowrap`}>
                   Industries
                 </a>
               </Link>
