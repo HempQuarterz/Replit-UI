@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 bg-black">
         <div className="flex justify-between items-center h-24">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center mr-2">
@@ -32,7 +32,7 @@ const Navbar = () => {
                 />
               </Link>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-6 items-center">
+            <div className="hidden sm:ml-4 sm:flex sm:space-x-8 items-center">
               <Link href="/">
                 <a className={`${location === '/' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-1 pt-1 text-base font-medium whitespace-nowrap`}>
                   Home
@@ -56,12 +56,12 @@ const Navbar = () => {
             </div>
           </div>
           
-          <div className="hidden sm:ml-10 sm:flex sm:items-center">
+          <div className="hidden sm:ml-auto sm:flex sm:items-center">
             <form onSubmit={handleSearch} className="relative">
               <Input
                 type="text"
                 placeholder="Search..."
-                className="w-44 rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base"
+                className="w-36 rounded-full px-4 py-2 border border-neutral-light focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
