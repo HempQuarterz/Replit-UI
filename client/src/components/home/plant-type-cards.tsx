@@ -11,21 +11,17 @@ const PlantTypeCards = () => {
 
   return (
     <div className="py-12 relative overflow-hidden">
-      {/* Video background effect */}
-      <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
-      <video 
-        className="absolute inset-0 z-0 object-cover w-full h-full opacity-50 mix-blend-overlay"
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source src="/videos/hemp-background.mp4" type="video/mp4" />
-      </video>
+      {/* Hemp ecosystem background image */}
+      <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-40 mix-blend-soft-light"
+        style={{ backgroundImage: 'url(/images/hemp-ecosystem.webp)' }}
+      ></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70 z-0"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-2xl sm:text-3xl font-heading font-bold text-green-400 text-outline-white text-center mb-8">Select Hemp Plant Type</h2>
-        <p className="text-center text-white text-outline-white max-w-3xl mx-auto mb-10">
+        <h2 className="text-2xl sm:text-3xl font-heading font-bold text-green-400 text-outline-white text-center mb-8 glow-green-sm">Select Hemp Plant Type</h2>
+        <p className="text-center text-white text-outline-white max-w-3xl mx-auto mb-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
           Industrial hemp is cultivated with different focuses depending on the desired output. Choose a cultivation type below to explore its specific applications.
         </p>
         
@@ -49,7 +45,7 @@ const PlantTypeCards = () => {
           <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-5xl lg:mx-auto">
             {plantTypes.map((plantType: PlantType) => (
               <div key={plantType.id} className="relative group">
-                <div className="relative h-80 w-full overflow-hidden rounded-lg bg-black border border-green-500/30 shadow-[0_0_15px_rgba(0,255,0,0.3)] transition-all duration-300 ease-in-out group-hover:shadow-[0_0_25px_rgba(0,255,0,0.5)]">
+                <div className="relative h-80 w-full overflow-hidden rounded-lg bg-black/80 border border-green-500/50 shadow-[0_0_20px_rgba(0,255,0,0.4)] transition-all duration-300 ease-in-out group-hover:shadow-[0_0_30px_rgba(0,255,0,0.6)]">
                   {plantType.id === 1 ? (
                     <div className="h-full w-full">
                       <SimpleHempModel
@@ -66,8 +62,9 @@ const PlantTypeCards = () => {
                   {plantType.id !== 1 && (
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/30 mix-blend-multiply"></div>
                   )}
-                  {/* Matrix-like overlay on hover */}
-                  <div className="absolute inset-0 bg-matrix-effect opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                  {/* Hemp ecosystem overlay on hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+                       style={{ backgroundImage: 'url(/images/hemp-ecosystem.webp)', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(1px)' }}></div>
                   <div className="absolute bottom-0 left-0 p-6">
                     <h3 className="text-xl font-heading font-semibold text-green-400 text-outline-white">{plantType.name}</h3>
                     <p className="mt-2 text-sm text-white/90">{plantType.description}</p>
