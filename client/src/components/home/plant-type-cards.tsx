@@ -11,9 +11,17 @@ const PlantTypeCards = () => {
 
   return (
     <div className="py-12 relative overflow-hidden">
-      {/* Matrix-like background effect */}
-      <div className="absolute inset-0 bg-black opacity-90 z-0"></div>
-      <div className="absolute inset-0 z-0 bg-matrix-effect animate-matrix-flow"></div>
+      {/* Video background effect */}
+      <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
+      <video 
+        className="absolute inset-0 z-0 object-cover w-full h-full opacity-50 mix-blend-overlay"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src="/videos/hemp-background.mp4" type="video/mp4" />
+      </video>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-2xl sm:text-3xl font-heading font-bold text-green-400 text-outline-white text-center mb-8">Select Hemp Plant Type</h2>
