@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { PlantType } from "@shared/schema";
 import SimpleHempModel from "@/components/models/SimpleHempModel";
+import hempEcosystemImage from "@/assets/images/hemp-ecosystem.webp";
 
 const PlantTypeCards = () => {
   const { data: plantTypesData, isLoading } = usePlantTypes();
@@ -12,10 +13,10 @@ const PlantTypeCards = () => {
   return (
     <div className="py-12 relative overflow-hidden">
       {/* Hemp ecosystem background image */}
-      <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
+      <div className="absolute inset-0 bg-black opacity-75 z-0"></div>
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-40 mix-blend-soft-light"
-        style={{ backgroundImage: 'url(/images/hemp-ecosystem.webp)' }}
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-30 mix-blend-soft-light"
+        style={{ backgroundImage: `url(${hempEcosystemImage})` }}
       ></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70 z-0"></div>
       
@@ -45,7 +46,7 @@ const PlantTypeCards = () => {
           <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-5xl lg:mx-auto">
             {plantTypes.map((plantType: PlantType) => (
               <div key={plantType.id} className="relative group">
-                <div className="relative h-80 w-full overflow-hidden rounded-lg bg-black/80 border border-green-500/50 shadow-[0_0_20px_rgba(0,255,0,0.4)] transition-all duration-300 ease-in-out group-hover:shadow-[0_0_30px_rgba(0,255,0,0.6)]">
+                <div className="relative h-80 w-full overflow-hidden rounded-lg bg-black/90 border-2 border-green-500/60 shadow-[0_0_20px_rgba(0,255,0,0.5)] transition-all duration-300 ease-in-out group-hover:shadow-[0_0_30px_rgba(0,255,0,0.7)]">
                   {plantType.id === 1 ? (
                     <div className="h-full w-full">
                       <SimpleHempModel
@@ -64,7 +65,7 @@ const PlantTypeCards = () => {
                   )}
                   {/* Hemp ecosystem overlay on hover */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
-                       style={{ backgroundImage: 'url(/images/hemp-ecosystem.webp)', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(1px)' }}></div>
+                       style={{ backgroundImage: `url(${hempEcosystemImage})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(1px)' }}></div>
                   <div className="absolute bottom-0 left-0 p-6">
                     <h3 className="text-xl font-heading font-semibold text-green-400 text-outline-white">{plantType.name}</h3>
                     <p className="mt-2 text-sm text-white/90">{plantType.description}</p>
