@@ -33,54 +33,52 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-heading font-medium mb-4 text-outline-white text-center">Quick Links</h3>
-            <div className="flex flex-col items-center">
-              {/* Top row */}
-              <div className="flex space-x-6 mb-2 items-center">
+            <h3 className="text-lg font-heading font-medium mb-4 text-outline-white">Quick Links</h3>
+            <ul className="space-y-3">
+              <li>
                 <Link href="/">
-                  <div className="border-transparent text-white hover:text-primary hover:border-primary border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer">
-                    Home
-                  </div>
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Home</div>
                 </Link>
+              </li>
+              <li>
                 <Link href="/about">
-                  <div className="border-transparent text-white hover:text-primary hover:border-primary border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer">
-                    About
-                  </div>
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">About Hemp</div>
                 </Link>
+              </li>
+              <li>
                 <Link href="/plant-types">
-                  <div className="border-transparent text-white hover:text-primary hover:border-primary border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer">
-                    Plant Types
-                  </div>
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Plant Types</div>
                 </Link>
-              </div>
-              
-              {/* Bottom row */}
-              <div className="flex space-x-6 items-center">
+              </li>
+              <li>
                 <Link href="/plant-parts">
-                  <div className="border-transparent text-white hover:text-primary hover:border-primary border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer">
-                    Parts of Plant
-                  </div>
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Parts of Plant</div>
                 </Link>
+              </li>
+              <li>
                 <Link href="/industries">
-                  <div className="border-transparent text-white hover:text-primary hover:border-primary border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer">
-                    Industries
-                  </div>
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Industries</div>
                 </Link>
-                <Link href="/research">
-                  <div className="border-transparent text-white hover:text-primary hover:border-primary border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer">
-                    Research
-                  </div>
+              </li>
+              <li>
+                <Link href="/legal">
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Legal Status</div>
                 </Link>
-              </div>
-            </div>
+              </li>
+              <li>
+                <Link href="/resources">
+                  <div className="text-neutral-light hover:text-white transition-colors text-outline-white cursor-pointer">Research Resources</div>
+                </Link>
+              </li>
+            </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-heading font-medium mb-4 text-outline-white text-center">Subscribe</h3>
-            <p className="text-white mb-4 text-center">
+            <h3 className="text-lg font-heading font-medium mb-4 text-outline-white">Subscribe</h3>
+            <p className="text-neutral-light mb-4 text-outline-white">
               Join our newsletter to receive updates on new hemp applications and industry developments.
             </p>
-            <form onSubmit={handleSubscribe} className="mb-4 flex justify-center">
+            <form onSubmit={handleSubscribe} className="mb-4">
               <div className="flex max-w-md">
                 <Input
                   type="email"
@@ -95,7 +93,7 @@ const Footer = () => {
                 </Button>
               </div>
             </form>
-            <p className="text-xs text-white text-center">
+            <p className="text-xs text-neutral-medium text-outline-white">
               By subscribing, you agree to our Privacy Policy and consent to receive updates from HempDB.
             </p>
           </div>
@@ -105,13 +103,13 @@ const Footer = () => {
           <p className="text-sm text-outline-white">© {new Date().getFullYear()} HempDB. All rights reserved.</p>
           <div className="mt-4 sm:mt-0 flex space-x-6">
             <Link href="/privacy">
-              <div className="border-transparent text-white hover:text-primary hover:border-primary border-b px-0.5 pt-1 text-sm font-medium whitespace-nowrap cursor-pointer">Privacy Policy</div>
+              <div className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white cursor-pointer">Privacy Policy</div>
             </Link>
             <Link href="/terms">
-              <div className="border-transparent text-white hover:text-primary hover:border-primary border-b px-0.5 pt-1 text-sm font-medium whitespace-nowrap cursor-pointer">Terms of Service</div>
+              <div className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white cursor-pointer">Terms of Service</div>
             </Link>
             <Link href="/contact">
-              <div className="border-transparent text-white hover:text-primary hover:border-primary border-b px-0.5 pt-1 text-sm font-medium whitespace-nowrap cursor-pointer">Contact</div>
+              <div className="text-sm text-neutral-medium hover:text-white transition-colors text-outline-white cursor-pointer">Contact</div>
             </Link>
           </div>
         </div>
