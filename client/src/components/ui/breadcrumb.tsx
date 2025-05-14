@@ -32,9 +32,9 @@ export const createBreadcrumb = (items: { href: string; label: string; isCurrent
               </span>
             ) : (
               <Link href={item.href}>
-                <a className="text-sm text-white/70 hover:text-green-400 transition-colors">
+                <span className="text-sm text-white/70 hover:text-green-400 transition-colors cursor-pointer">
                   {item.label}
-                </a>
+                </span>
               </Link>
             )}
           </li>

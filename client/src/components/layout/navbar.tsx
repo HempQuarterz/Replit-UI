@@ -32,37 +32,44 @@ const Navbar = () => {
                 />
               </Link>
             </div>
-            <div className="hidden sm:ml-4 sm:flex sm:space-x-2 items-center">
-              <Link href="/">
-                <div className={`${location === '/' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
-                  Home
-                </div>
-              </Link>
-              <Link href="/about">
-                <div className={`${location === '/about' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
-                  About
-                </div>
-              </Link>
-              <Link href="/plant-types">
-                <div className={`${location === '/plant-types' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
-                  Plant Types
-                </div>
-              </Link>
-              <Link href="/plant-parts">
-                <div className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
-                  Parts of Plant
-                </div>
-              </Link>
-              <Link href="/industries">
-                <div className={`${location === '/industries' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
-                  Industries
-                </div>
-              </Link>
-              <Link href="/research">
-                <div className={`${location.startsWith('/research') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
-                  Research
-                </div>
-              </Link>
+            <div className="hidden sm:ml-4 sm:flex sm:flex-col">
+              {/* Top row */}
+              <div className="flex space-x-4 mb-2 items-center">
+                <Link href="/">
+                  <div className={`${location === '/' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
+                    Home
+                  </div>
+                </Link>
+                <Link href="/about">
+                  <div className={`${location === '/about' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
+                    About
+                  </div>
+                </Link>
+                <Link href="/plant-types">
+                  <div className={`${location === '/plant-types' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
+                    Plant Types
+                  </div>
+                </Link>
+              </div>
+              
+              {/* Bottom row */}
+              <div className="flex space-x-4 items-center">
+                <Link href="/plant-parts">
+                  <div className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
+                    Parts of Plant
+                  </div>
+                </Link>
+                <Link href="/industries">
+                  <div className={`${location === '/industries' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
+                    Industries
+                  </div>
+                </Link>
+                <Link href="/research">
+                  <div className={`${location.startsWith('/research') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
+                    Research
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
           
@@ -151,6 +158,11 @@ const Navbar = () => {
                       <Link href="/industries">
                         <div className={`${location === '/industries' ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-xl cursor-pointer`}>
                           Industries
+                        </div>
+                      </Link>
+                      <Link href="/research">
+                        <div className={`${location.startsWith('/research') ? 'text-primary font-medium' : 'text-white'} hover:text-primary px-3 py-2 text-xl cursor-pointer`}>
+                          Research
                         </div>
                       </Link>
                     </nav>
