@@ -4,7 +4,8 @@ import {
   plantParts, type PlantPart, type InsertPlantPart,
   industries, type Industry, type InsertIndustry,
   subIndustries, type SubIndustry, type InsertSubIndustry,
-  hempProducts, type HempProduct, type InsertHempProduct
+  hempProducts, type HempProduct, type InsertHempProduct,
+  researchPapers, type ResearchPaper, type InsertResearchPaper
 } from "@shared/schema";
 
 // Storage interface
@@ -47,6 +48,15 @@ export interface IStorage {
   searchHempProducts(query: string): Promise<HempProduct[]>;
   getPaginatedHempProducts(page: number, limit: number, plantPartId?: number, industryId?: number): Promise<{products: HempProduct[], total: number}>;
   countTotalHempProducts(): Promise<number>;
+  
+  // Research paper methods
+  getAllResearchPapers(): Promise<ResearchPaper[]>;
+  getResearchPaper(id: number): Promise<ResearchPaper | undefined>;
+  getResearchPapersByPlantType(plantTypeId: number): Promise<ResearchPaper[]>;
+  getResearchPapersByPlantPart(plantPartId: number): Promise<ResearchPaper[]>;
+  getResearchPapersByIndustry(industryId: number): Promise<ResearchPaper[]>;
+  searchResearchPapers(query: string): Promise<ResearchPaper[]>;
+  createResearchPaper(researchPaper: InsertResearchPaper): Promise<ResearchPaper>;
   
   // Database initialization
   initializeData?(): Promise<void>;
