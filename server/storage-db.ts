@@ -4,7 +4,8 @@ import {
   plantParts, type PlantPart, type InsertPlantPart,
   industries, type Industry, type InsertIndustry,
   subIndustries, type SubIndustry, type InsertSubIndustry,
-  hempProducts, type HempProduct, type InsertHempProduct
+  hempProducts, type HempProduct, type InsertHempProduct,
+  researchPapers, type ResearchPaper, type InsertResearchPaper
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, sql, and, like, ilike, or } from "drizzle-orm";
@@ -184,6 +185,50 @@ export class DatabaseStorage implements IStorage {
   async countTotalHempProducts(): Promise<number> {
     const result = await db.select({ count: sql<number>`count(*)` }).from(hempProducts);
     return result[0].count;
+  }
+
+  // Research paper methods
+  async getAllResearchPapers(): Promise<ResearchPaper[]> {
+    return await db.select().from(researchPapers);
+  }
+
+  async getResearchPaper(id: number): Promise<ResearchPaper | undefined> {
+    const results = await db.select().from(researchPapers).where(eq(researchPapers.id, id));
+    return results[0];
+  }
+
+  async getResearchPapersByPlantType(plantTypeId: number): Promise<ResearchPaper[]> {
+    return await db.select().from(researchPapers).where(eq(researchPapers.plantTypeId, plantTypeId));
+  }
+
+  async getResearchPapersByPlantPart(plantPartId: number): Promise<ResearchPaper[]> {
+    return await db.select().from(researchPapers).where(eq(researchPapers.plantPartId, plantPartId));
+  }
+
+  async getResearchPapersByIndustry(industryId: number): Promise<ResearchPaper[]> {
+    return await db.select().from(researchPapers).where(eq(researchPapers.industryId, industryId));
+  }
+
+  async searchResearchPapers(query: string): Promise<ResearchPaper[]> {
+    if (!query) {
+      return this.getAllResearchPapers();
+    }
+    
+    const lowerQuery = `%${query.toLowerCase()}%`;
+    
+    return await db.select().from(researchPapers).where(
+      or(
+        ilike(researchPapers.title, lowerQuery),
+        ilike(researchPapers.authors, lowerQuery),
+        ilike(researchPapers.abstract, lowerQuery),
+        ilike(researchPapers.journal, lowerQuery)
+      )
+    );
+  }
+
+  async createResearchPaper(insertResearchPaper: InsertResearchPaper): Promise<ResearchPaper> {
+    const results = await db.insert(researchPapers).values(insertResearchPaper).returning();
+    return results[0];
   }
 
   // Initialize the database with sample data
