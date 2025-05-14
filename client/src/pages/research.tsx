@@ -9,7 +9,7 @@ export default function ResearchPage() {
   const { data: papers, isLoading } = useResearchPapers();
 
   return (
-    <>
+    <div className="research-page">
       <Helmet>
         <title>Research Papers | HempQuarterz</title>
         <meta 
@@ -49,6 +49,6 @@ export default function ResearchPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
