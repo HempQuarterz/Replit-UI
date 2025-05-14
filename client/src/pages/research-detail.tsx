@@ -48,7 +48,7 @@ export default function ResearchDetailPage() {
   const isLoading = isLoadingPaper || isLoadingPlantType || isLoadingPlantPart || isLoadingIndustries;
 
   return (
-    <>
+    <div className="research-detail-page">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -99,6 +99,6 @@ export default function ResearchDetailPage() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
