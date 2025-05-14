@@ -22,19 +22,22 @@ const Navbar = () => {
     <nav className="bg-black shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 bg-black">
         <div className="flex justify-between items-center h-28">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center mr-2">
-              <Link href="/">
-                <img 
-                  src={HempQuarterzLogo} 
-                  alt="HempQuarterz Logo" 
-                  className="h-24 w-24 cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
-                />
-              </Link>
-            </div>
-            <div className="hidden sm:ml-4 sm:flex sm:flex-col">
+          {/* Logo on the left */}
+          <div className="flex-shrink-0 flex items-center">
+            <Link href="/">
+              <img 
+                src={HempQuarterzLogo} 
+                alt="HempQuarterz Logo" 
+                className="h-24 w-24 cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+              />
+            </Link>
+          </div>
+          
+          {/* Navigation menu in the center */}
+          <div className="hidden sm:flex sm:flex-1 sm:justify-center">
+            <div className="flex flex-col items-center">
               {/* Top row */}
-              <div className="flex space-x-4 mb-2 items-center">
+              <div className="flex space-x-6 mb-2 items-center">
                 <Link href="/">
                   <div className={`${location === '/' ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
                     Home
@@ -53,7 +56,7 @@ const Navbar = () => {
               </div>
               
               {/* Bottom row */}
-              <div className="flex space-x-4 items-center">
+              <div className="flex space-x-6 items-center">
                 <Link href="/plant-parts">
                   <div className={`${location.startsWith('/plant-part') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
                     Parts of Plant
@@ -73,7 +76,8 @@ const Navbar = () => {
             </div>
           </div>
           
-          <div className="hidden sm:ml-auto sm:flex sm:items-center sm:pl-12 pr-2">
+          {/* Search on the right */}
+          <div className="hidden sm:flex sm:items-center sm:pr-2">
             <form onSubmit={handleSearch} className="relative">
               <Input
                 type="text"
