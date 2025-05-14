@@ -76,11 +76,11 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-heading font-medium mb-4 text-outline-white">Subscribe</h3>
-            <p className="text-neutral-light mb-4 text-outline-white">
+            <h3 className="text-lg font-heading font-medium mb-4 text-outline-white text-center">Subscribe</h3>
+            <p className="text-white mb-4 text-center">
               Join our newsletter to receive updates on new hemp applications and industry developments.
             </p>
-            <form onSubmit={handleSubscribe} className="mb-4">
+            <form onSubmit={handleSubscribe} className="mb-4 flex justify-center">
               <div className="flex max-w-md">
                 <Input
                   type="email"
@@ -95,7 +95,7 @@ const Footer = () => {
                 </Button>
               </div>
             </form>
-            <p className="text-xs text-neutral-medium text-outline-white">
+            <p className="text-xs text-white text-center">
               By subscribing, you agree to our Privacy Policy and consent to receive updates from HempDB.
             </p>
           </div>
