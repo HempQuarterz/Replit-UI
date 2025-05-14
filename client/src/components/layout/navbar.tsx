@@ -58,6 +58,11 @@ const Navbar = () => {
                   Industries
                 </div>
               </Link>
+              <Link href="/research">
+                <div className={`${location.startsWith('/research') ? 'border-primary text-primary' : 'border-transparent text-white hover:text-primary hover:border-primary'} border-b-2 px-0.5 pt-1 text-lg font-medium whitespace-nowrap cursor-pointer`}>
+                  Research
+                </div>
+              </Link>
             </div>
           </div>
           

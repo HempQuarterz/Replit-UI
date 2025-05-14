@@ -1,6 +1,6 @@
-import { ResearchPaper } from "@shared/schema";
+import { ResearchPaper, PlantType, PlantPart, Industry } from "@shared/schema";
 import ResearchPaperCard from "./research-paper-card";
-import { usePlantTypes, usePlantParts, useIndustries } from "@hooks/use-plant-data";
+import { usePlantTypes, usePlantParts, useIndustries } from "../../hooks/use-plant-data";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface ResearchPaperListProps {
@@ -25,20 +25,20 @@ const ResearchPaperList = ({
   const industryNames: Record<number, string> = {};
 
   // Populate lookup maps
-  if (plantTypes) {
-    plantTypes.forEach(type => {
+  if (plantTypes && Array.isArray(plantTypes)) {
+    plantTypes.forEach((type: PlantType) => {
       plantTypeNames[type.id] = type.name;
     });
   }
 
-  if (plantParts) {
-    plantParts.forEach(part => {
+  if (plantParts && Array.isArray(plantParts)) {
+    plantParts.forEach((part: PlantPart) => {
       plantPartNames[part.id] = part.name;
     });
   }
 
-  if (industries) {
-    industries.forEach(industry => {
+  if (industries && Array.isArray(industries)) {
+    industries.forEach((industry: Industry) => {
       industryNames[industry.id] = industry.name;
     });
   }

@@ -1,11 +1,16 @@
 import { useParams, Link } from "wouter";
 import { Helmet } from "react-helmet";
-import { useResearchPaper, useResearchPapersByPlantType } from "@hooks/use-research-papers";
-import { usePlantType, usePlantPart, useIndustries } from "@hooks/use-plant-data";
+import { ResearchPaper } from "@shared/schema";
+import { useResearchPaper, useResearchPapersByPlantType } from "../hooks/use-research-papers";
+import { usePlantType, usePlantPart, useIndustries } from "../hooks/use-plant-data";
 import ResearchPaperDetail from "@/components/research/research-paper-detail";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+// Import breadcrumb components individually
+import { Breadcrumb } from "@/components/ui/breadcrumb";
+import { BreadcrumbItem } from "@/components/ui/breadcrumb";
+import { BreadcrumbLink } from "@/components/ui/breadcrumb";
+import { BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function ResearchDetailPage() {
   // Get paperId from URL
@@ -25,7 +30,7 @@ export default function ResearchDetailPage() {
   );
   
   const { data: industries, isLoading: isLoadingIndustries } = useIndustries();
-  const industry = industries?.find(i => i.id === paper?.industryId);
+  const industry = industries?.find((i: { id: number }) => i.id === paper?.industryId);
 
   // Fetch related papers (papers with the same plant type)
   const { data: relatedPapers } = useResearchPapersByPlantType(
@@ -34,7 +39,7 @@ export default function ResearchDetailPage() {
 
   // Filter out the current paper from related papers and limit to 4
   const filteredRelatedPapers = relatedPapers
-    ?.filter(relatedPaper => relatedPaper.id !== paper?.id)
+    ?.filter((relatedPaper: ResearchPaper) => relatedPaper.id !== paper?.id)
     .slice(0, 4);
 
   // Generate page title and description for SEO

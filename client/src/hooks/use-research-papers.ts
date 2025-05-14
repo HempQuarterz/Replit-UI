@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { ResearchPaper } from "@shared/schema";
-import { getQueryFn } from "@lib/queryClient";
+import { getQueryFn } from "../lib/queryClient";
 
 export function useResearchPapers() {
   return useQuery<ResearchPaper[]>({

@@ -15,6 +15,8 @@ import PlantPartPage from "@/pages/plant-part";
 import ProductListingPage from "@/pages/product-listing";
 import ProductDetailPage from "@/pages/product-detail";
 import IndustriesPage from "@/pages/industries";
+import ResearchPage from "./pages/research";
+import ResearchDetailPage from "./pages/research-detail";
 
 function Router() {
   return (
@@ -28,6 +30,8 @@ function Router() {
       <Route path="/products/:plantPartId/:industryId?" component={ProductListingPage} />
       <Route path="/product/:id" component={ProductDetailPage} />
       <Route path="/industries" component={IndustriesPage} />
+      <Route path="/research" component={ResearchPage} />
+      <Route path="/research/:paperId" component={ResearchDetailPage} />
       <Route component={NotFound} />
     </Switch>
   );
