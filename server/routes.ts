@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { DatabaseStorage } from "./storage-db";
 import { z } from "zod";
-import { insertPlantTypeSchema, insertPlantPartSchema, insertIndustrySchema, insertSubIndustrySchema, insertHempProductSchema, plantTypes } from "@shared/schema";
+import { insertPlantTypeSchema, insertPlantPartSchema, insertIndustrySchema, insertSubIndustrySchema, insertHempProductSchema, insertResearchPaperSchema, plantTypes } from "@shared/schema";
 import { log } from "./vite";
 import { db } from "./db";
 
@@ -209,6 +209,82 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch statistics" });
+    }
+  });
+
+  // Research paper routes
+  app.get("/api/research-papers", async (req, res) => {
+    try {
+      const papers = await storage.getAllResearchPapers();
+      res.json(papers);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch research papers" });
+    }
+  });
+
+  app.get("/api/research-papers/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      const paper = await storage.getResearchPaper(id);
+      if (!paper) {
+        return res.status(404).json({ message: "Research paper not found" });
+      }
+      res.json(paper);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch research paper" });
+    }
+  });
+
+  app.get("/api/research-papers/plant-type/:plantTypeId", async (req, res) => {
+    try {
+      const plantTypeId = parseInt(req.params.plantTypeId);
+      const papers = await storage.getResearchPapersByPlantType(plantTypeId);
+      res.json(papers);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch research papers by plant type" });
+    }
+  });
+
+  app.get("/api/research-papers/plant-part/:plantPartId", async (req, res) => {
+    try {
+      const plantPartId = parseInt(req.params.plantPartId);
+      const papers = await storage.getResearchPapersByPlantPart(plantPartId);
+      res.json(papers);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch research papers by plant part" });
+    }
+  });
+
+  app.get("/api/research-papers/industry/:industryId", async (req, res) => {
+    try {
+      const industryId = parseInt(req.params.industryId);
+      const papers = await storage.getResearchPapersByIndustry(industryId);
+      res.json(papers);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch research papers by industry" });
+    }
+  });
+
+  app.get("/api/research-papers/search", async (req, res) => {
+    try {
+      const query = req.query.q as string || "";
+      const papers = await storage.searchResearchPapers(query);
+      res.json(papers);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to search research papers" });
+    }
+  });
+  
+  app.post("/api/research-papers", async (req, res) => {
+    try {
+      const validatedData = insertResearchPaperSchema.parse(req.body);
+      const paper = await storage.createResearchPaper(validatedData);
+      res.status(201).json(paper);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: "Validation error", errors: error.errors });
+      }
+      res.status(500).json({ message: "Failed to create research paper" });
     }
   });
 
