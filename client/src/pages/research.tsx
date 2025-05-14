@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import { useResearchPapers } from "../hooks/use-research-papers";
 import ResearchPaperList from "@/components/research/research-paper-list";
 import { Separator } from "@/components/ui/separator";
+import { createBreadcrumb } from "@/components/ui/breadcrumb";
 
 export default function ResearchPage() {
   // Fetch research papers
@@ -19,6 +20,14 @@ export default function ResearchPage() {
 
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-5xl mx-auto">
+          {/* Breadcrumb */}
+          <div className="mb-6">
+            {createBreadcrumb([
+              { href: "/", label: "Home" },
+              { href: "/research", label: "Research", isCurrent: true }
+            ])}
+          </div>
+          
           <div className="text-center mb-10">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-400 mb-4 drop-shadow-[0_0_4px_rgba(74,222,128,0.3)]">
               Hemp Research Repository

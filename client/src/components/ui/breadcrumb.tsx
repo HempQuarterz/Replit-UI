@@ -3,67 +3,43 @@ import { ChevronRight } from "lucide-react";
 import { Link } from "wouter";
 import { cn } from "@/lib/utils";
 
-export interface BreadcrumbProps {
-  className?: string;
-  children?: React.ReactNode;
-}
-
-export function Breadcrumb({ className, children }: BreadcrumbProps) {
+// Simple breadcrumb component
+const Breadcrumb = ({ className, children }: { className?: string, children?: React.ReactNode }) => {
   return (
     <nav className={cn("flex", className)} aria-label="breadcrumb">
       <ol className="flex flex-wrap items-center gap-1.5 sm:gap-2.5">{children}</ol>
     </nav>
   );
-}
+};
 
-export interface BreadcrumbItemProps {
-  children: React.ReactNode;
-  className?: string;
-}
+// Export as default and named export to maintain compatibility with both import styles
+export default Breadcrumb;
 
-export function BreadcrumbItem({ children, className }: BreadcrumbItemProps) {
+// Export a simple way to create a breadcrumb from links
+export const createBreadcrumb = (items: { href: string; label: string; isCurrent?: boolean }[]) => {
   return (
-    <li className={cn("inline-flex items-center gap-1.5", className)}>
-      {children}
-    </li>
+    <Breadcrumb>
+      {items.map((item, index) => (
+        <React.Fragment key={item.href}>
+          {index > 0 && <ChevronRight className="h-4 w-4 text-white/50" />}
+          <li className="inline-flex items-center gap-1.5">
+            {item.isCurrent ? (
+              <span 
+                className="text-sm font-semibold text-green-400 pointer-events-none cursor-default"
+                aria-current="page"
+              >
+                {item.label}
+              </span>
+            ) : (
+              <Link href={item.href}>
+                <a className="text-sm text-white/70 hover:text-green-400 transition-colors">
+                  {item.label}
+                </a>
+              </Link>
+            )}
+          </li>
+        </React.Fragment>
+      ))}
+    </Breadcrumb>
   );
-}
-
-export interface BreadcrumbLinkProps {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-  isCurrentPage?: boolean;
-}
-
-export function BreadcrumbLink({ href, children, className, isCurrentPage = false }: BreadcrumbLinkProps) {
-  if (isCurrentPage) {
-    return (
-      <span
-        className={cn(
-          "text-sm font-semibold text-green-400 pointer-events-none cursor-default",
-          className
-        )}
-        aria-current="page"
-      >
-        {children}
-      </span>
-    );
-  }
-
-  return (
-    <Link href={href}>
-      <a className={cn("text-sm text-white/70 hover:text-green-400 transition-colors", className)}>
-        {children}
-      </a>
-    </Link>
-  );
-}
-
-export interface BreadcrumbSeparatorProps {
-  className?: string;
-}
-
-export function BreadcrumbSeparator({ className }: BreadcrumbSeparatorProps) {
-  return <ChevronRight className={cn("h-4 w-4 text-white/50", className)} />;
-}
+};

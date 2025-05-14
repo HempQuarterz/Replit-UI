@@ -6,8 +6,8 @@ import { usePlantType, usePlantPart, useIndustries } from "../hooks/use-plant-da
 import ResearchPaperDetail from "@/components/research/research-paper-detail";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-// Import Icon for breadcrumb
-import { ChevronRight } from "lucide-react";
+// Import breadcrumb
+import { createBreadcrumb } from "@/components/ui/breadcrumb";
 
 export default function ResearchDetailPage() {
   // Get paperId from URL
@@ -58,27 +58,17 @@ export default function ResearchDetailPage() {
         <div className="max-w-5xl mx-auto">
           {/* Breadcrumb */}
           <div className="mb-6">
-            <nav aria-label="breadcrumb" className="flex">
-              <ol className="flex flex-wrap items-center gap-1.5 sm:gap-2.5">
-                <li className="inline-flex items-center gap-1.5">
-                  <Link href="/">
-                    <a className="text-sm text-white/70 hover:text-green-400 transition-colors">Home</a>
-                  </Link>
-                </li>
-                <ChevronRight className="h-4 w-4 text-white/50" />
-                <li className="inline-flex items-center gap-1.5">
-                  <Link href="/research">
-                    <a className="text-sm text-white/70 hover:text-green-400 transition-colors">Research</a>
-                  </Link>
-                </li>
-                <ChevronRight className="h-4 w-4 text-white/50" />
-                <li className="inline-flex items-center gap-1.5">
-                  <span className="text-sm font-semibold text-green-400 pointer-events-none cursor-default" aria-current="page">
-                    {paper?.title ? (paper.title.length > 40 ? paper.title.substring(0, 40) + '...' : paper.title) : 'Loading...'}
-                  </span>
-                </li>
-              </ol>
-            </nav>
+            {createBreadcrumb([
+              { href: "/", label: "Home" },
+              { href: "/research", label: "Research" },
+              { 
+                href: `/research/${id}`, 
+                label: paper?.title 
+                  ? (paper.title.length > 40 ? paper.title.substring(0, 40) + '...' : paper.title) 
+                  : 'Loading...', 
+                isCurrent: true 
+              }
+            ])}
           </div>
 
           {/* Back button */}
