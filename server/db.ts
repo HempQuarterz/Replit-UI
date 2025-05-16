@@ -2,14 +2,10 @@ import { Pool } from 'pg';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import * as schema from '@shared/schema';
 
-// Connect to the PostgreSQL database with explicit parameters
+// Let's use the standard Neon DB connection instead
 const pool = new Pool({
-  user: 'postgres',
-  password: '#4HQZgasswo',
-  host: 'db.qnclnzaipfdecnptwlfw.supabase.co',
-  port: 5432,
-  database: 'postgres',
-  ssl: { rejectUnauthorized: false }
+  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/postgres',
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : undefined
 });
 
 // Test the connection
