@@ -9,9 +9,9 @@ export default function SupabaseTest() {
   useEffect(() => {
     async function testConnection() {
       try {
-        // Test connection with a simple query that doesn't use aggregates
+        // Test connection with the industries table since it already exists
         const { data, error } = await supabase
-          .from('plant_types')
+          .from('industries')
           .select('*')
           .limit(5);
         
