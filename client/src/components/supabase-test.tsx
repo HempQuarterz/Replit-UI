@@ -9,15 +9,18 @@ export default function SupabaseTest() {
   useEffect(() => {
     async function testConnection() {
       try {
-        // Test connection by executing a simple query
-        const { data, error } = await supabase.from('plant_types').select('count()', { count: 'exact' });
+        // Test connection with a simple query that doesn't use aggregates
+        const { data, error } = await supabase
+          .from('plant_types')
+          .select('*')
+          .limit(5);
         
         if (error) {
           throw error;
         }
         
         setStatus('connected');
-        setData(data);
+        setData(data || []);
       } catch (err: any) {
         console.error('Supabase connection error:', err);
         setStatus('error');
