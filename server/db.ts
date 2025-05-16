@@ -2,14 +2,10 @@ import { Pool } from 'pg';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import * as schema from '@shared/schema';
 
-// Connect to the PostgreSQL database using direct connection details
-console.log('Connecting to Supabase PostgreSQL database');
+// Connect to the Replit-hosted PostgreSQL database
+console.log('Connecting to Replit-hosted PostgreSQL database');
 const pool = new Pool({
-  user: 'postgres', 
-  password: '#4HQZgasswo',
-  host: 'db.qnclnzaipfdecnptwlfw.supabase.co',
-  port: 5432,
-  database: 'postgres',
+  // This will use the PGUSER, PGHOST, etc. environment variables
   ssl: { rejectUnauthorized: false }
 });
 
@@ -18,7 +14,7 @@ pool.query('SELECT NOW()', (err, res) => {
   if (err) {
     console.error('Database connection error:', err);
   } else {
-    console.log('Successfully connected to Supabase database! Server time:', res.rows[0].now);
+    console.log('Successfully connected to database! Server time:', res.rows[0].now);
   }
 });
 
