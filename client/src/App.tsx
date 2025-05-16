@@ -18,6 +18,7 @@ import IndustriesPage from "@/pages/industries";
 import ResearchPage from "./pages/research";
 import ResearchDetailPage from "./pages/research-detail";
 import SupabaseTest from "./components/supabase-test";
+import SupabaseIndustries from "./components/supabase-industries";
 
 function Router() {
   return (
@@ -34,6 +35,7 @@ function Router() {
       <Route path="/research" component={ResearchPage} />
       <Route path="/research/:paperId" component={ResearchDetailPage} />
       <Route path="/supabase-test" component={SupabaseTest} />
+      <Route path="/supabase-industries" component={SupabaseIndustries} />
       <Route component={NotFound} />
     </Switch>
   );
