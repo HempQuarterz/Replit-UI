@@ -2,16 +2,13 @@ import { Pool } from 'pg';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import * as schema from '@shared/schema';
 
-// Check if we have the necessary environment variables
-if (!process.env.DATABASE_URL) {
-  throw new Error(
-    "DATABASE_URL must be set. Did you forget to provision a database?",
-  );
-}
-
-// Connect to the PostgreSQL database using MCP
+// Connect to the PostgreSQL database with explicit parameters
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  user: 'postgres',
+  password: '#4HQZgasswo',
+  host: 'db.qnclnzaipfdecnptwlfw.supabase.co',
+  port: 5432,
+  database: 'postgres',
   ssl: { rejectUnauthorized: false }
 });
 
