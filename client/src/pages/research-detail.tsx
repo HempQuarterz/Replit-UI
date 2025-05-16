@@ -41,7 +41,7 @@ export default function ResearchDetailPage() {
 
   // Generate page title and description for SEO
   const pageTitle = paper ? `${paper.title} | Research | HempQuarterz` : "Research Paper | HempQuarterz";
-  const pageDescription = paper 
+  const pageDescription = paper && paper.abstract
     ? `${paper.abstract.substring(0, 150)}...` 
     : "Detailed information about industrial hemp research paper.";
 
