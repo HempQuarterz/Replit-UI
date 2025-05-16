@@ -2,12 +2,10 @@ import { Pool } from 'pg';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import * as schema from '@shared/schema';
 
-// Use the PostgreSQL database that was created with Replit
-// This ensures the application works properly
-console.log('Connecting to Replit-hosted PostgreSQL database');
+// Use the Replit PostgreSQL database with SSL enabled
+console.log('Connecting to Replit PostgreSQL database');
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : undefined
+  ssl: { rejectUnauthorized: false }
 });
 
 // Test the connection
