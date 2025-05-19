@@ -195,15 +195,30 @@ export async function getHempProductsByIndustry(industryId: number): Promise<Hem
   return data || [];
 }
 
+// Enhanced search using full-text search capabilities
 export async function searchHempProducts(query: string): Promise<HempProduct[]> {
-  const { data, error } = await supabase
-    .from('hemp_products')
-    .select('*')
-    .or(`name.ilike.%${query}%,description.ilike.%${query}%`)
-    .order('name');
-  
-  if (error) throw error;
-  return data || [];
+  // Use the full-text search if the search_vector column exists
+  try {
+    const { data, error } = await supabase
+      .from('hemp_products')
+      .select('*')
+      .textSearch('search_vector', query)
+      .order('name');
+    
+    if (error) throw error;
+    return data || [];
+  } catch (e) {
+    // Fallback to ilike search if full-text search fails
+    console.warn('Falling back to ILIKE search for hemp products', e);
+    const { data, error } = await supabase
+      .from('hemp_products')
+      .select('*')
+      .or(`name.ilike.%${query}%,description.ilike.%${query}%`)
+      .order('name');
+    
+    if (error) throw error;
+    return data || [];
+  }
 }
 
 export async function createHempProduct(product: Omit<HempProduct, 'id' | 'created_at'>): Promise<HempProduct> {
@@ -275,15 +290,30 @@ export async function getResearchPapersByIndustry(industryId: number): Promise<R
   return data || [];
 }
 
+// Enhanced search for research papers using full-text search
 export async function searchResearchPapers(query: string): Promise<ResearchPaper[]> {
-  const { data, error } = await supabase
-    .from('research_papers')
-    .select('*')
-    .or(`title.ilike.%${query}%,abstract.ilike.%${query}%,authors.ilike.%${query}%`)
-    .order('title');
-  
-  if (error) throw error;
-  return data || [];
+  // Use full-text search if search_vector column exists
+  try {
+    const { data, error } = await supabase
+      .from('research_papers')
+      .select('*')
+      .textSearch('search_vector', query)
+      .order('title');
+    
+    if (error) throw error;
+    return data || [];
+  } catch (e) {
+    // Fallback to ilike search if full-text search fails
+    console.warn('Falling back to ILIKE search for research papers', e);
+    const { data, error } = await supabase
+      .from('research_papers')
+      .select('*')
+      .or(`title.ilike.%${query}%,abstract.ilike.%${query}%,authors.ilike.%${query}%`)
+      .order('title');
+    
+    if (error) throw error;
+    return data || [];
+  }
 }
 
 export async function createResearchPaper(paper: Omit<ResearchPaper, 'id' | 'created_at' | 'updated_at'>): Promise<ResearchPaper> {
