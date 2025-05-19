@@ -1,234 +1,128 @@
-# Industrial Hemp Database UI Export Guide
+# UI Export Guide for Hemp Database Project
 
-This guide will help you recreate the UI of this application with a fresh Supabase database setup.
+This guide helps you export just the user interface components of the project, so you can connect them to a new Supabase database.
 
-## Step 1: Export UI Components and Assets
+## UI Components to Export
 
-1. Download the project files from Replit
-2. Extract the following directories and files which contain the UI components:
-   - `client/src/components/` - All UI components
-   - `client/src/pages/` - Page layouts and routing
-   - `client/src/assets/` - Images and static assets
-   - `client/src/lib/utils.ts` - Utility functions
-   - `client/src/hooks/use-mobile.tsx` - Mobile detection hook
-   - `client/src/hooks/use-toast.ts` - Toast notification system
-   - `client/index.html` - Main HTML template
-   - `client/src/index.css` - Global styles
-   - `attached_assets/` - All custom images and assets
-   - `tailwind.config.ts` - Tailwind configuration
-   - `postcss.config.js` - PostCSS configuration
+The key UI components and files for this project are:
 
-## Step 2: Set Up a New Project with Supabase
+### Core UI Components
+- `client/src/components/` - All UI components
+- `client/src/pages/` - Page layouts and routes
+- `client/src/hooks/` - React hooks for data fetching
+- `client/src/lib/` - Utility functions and configuration
+- `client/src/assets/` - Images, fonts, and other static assets
+- `client/src/types/` - TypeScript type definitions
 
-1. Create a new project with these dependencies:
+### Supabase Connection Files
+- `client/src/lib/supabase-client.ts` - Supabase client configuration
+- `client/src/lib/supabase-api.ts` - API functions for Supabase
+- `client/src/hooks/use-supabase-data.ts` - React hooks for Supabase
+
+### Configuration Files
+- `client/index.html` - Main HTML template
+- `package.json` - Dependencies list
+- `tsconfig.json` - TypeScript configuration
+- `vite.config.ts` - Vite configuration
+- `postcss.config.js` and `tailwind.config.ts` - Styling configuration
+
+## Steps to Export UI Components
+
+1. **Download the project** from Replit as a ZIP file:
+   - Click the three dots in the file explorer
+   - Select "Download as ZIP"
+
+2. **Extract the ZIP file** to a local folder
+
+3. **Create a new project folder** for your UI-only export:
    ```
-   npm create vite@latest hemp-database -- --template react-ts
-   cd hemp-database
-   npm install @supabase/supabase-js
-   npm install tailwindcss postcss autoprefixer
-   npm install @radix-ui/react-* lucide-react class-variance-authority clsx tailwind-merge
-   npm install @tanstack/react-query wouter
-   npm install @react-three/fiber @react-three/drei three
+   mkdir hemp-database-ui
    ```
 
-2. Set up Tailwind CSS:
+4. **Copy the UI components** to the new folder:
    ```
-   npx tailwindcss init -p
+   cp -r /path/to/extracted/client/src/* /path/to/hemp-database-ui/src/
+   cp /path/to/extracted/client/index.html /path/to/hemp-database-ui/
+   cp /path/to/extracted/*.json /path/to/hemp-database-ui/
+   cp /path/to/extracted/*.config.* /path/to/hemp-database-ui/
    ```
 
-3. Copy over the Tailwind and PostCSS config files
-
-## Step 3: Supabase Database Setup
-
-1. Create a new Supabase project at https://supabase.com
-2. Under SQL Editor, run the following SQL to create your tables:
-
-```sql
--- Create tables based on schema in shared/schema.ts
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  username TEXT NOT NULL UNIQUE,
-  password_hash TEXT NOT NULL,
-  full_name TEXT,
-  email TEXT,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
-CREATE TABLE plant_types (
-  id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL,
-  description TEXT,
-  image_url TEXT,
-  model_url TEXT
-);
-
-CREATE TABLE plant_parts (
-  id SERIAL PRIMARY KEY,
-  plant_type_id INTEGER REFERENCES plant_types(id),
-  name TEXT NOT NULL,
-  description TEXT,
-  image_url TEXT
-);
-
-CREATE TABLE industries (
-  id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL,
-  description TEXT,
-  icon TEXT
-);
-
-CREATE TABLE sub_industries (
-  id SERIAL PRIMARY KEY,
-  industry_id INTEGER REFERENCES industries(id),
-  name TEXT NOT NULL,
-  description TEXT
-);
-
-CREATE TABLE hemp_products (
-  id SERIAL PRIMARY KEY,
-  plant_part_id INTEGER REFERENCES plant_parts(id),
-  industry_id INTEGER REFERENCES industries(id),
-  sub_industry_id INTEGER REFERENCES sub_industries(id),
-  name TEXT NOT NULL,
-  description TEXT,
-  image_url TEXT,
-  environmental_impact TEXT,
-  economic_impact TEXT,
-  traditional_alternative TEXT
-);
-
-CREATE TABLE research_papers (
-  id SERIAL PRIMARY KEY,
-  title TEXT NOT NULL,
-  authors TEXT,
-  publication_date DATE,
-  abstract TEXT,
-  doi TEXT,
-  url TEXT,
-  plant_type_id INTEGER REFERENCES plant_types(id),
-  plant_part_id INTEGER REFERENCES plant_parts(id),
-  industry_id INTEGER REFERENCES industries(id),
-  keywords TEXT
-);
-```
-
-## Step 4: Connect to Supabase
-
-1. Create a lib directory with a supabase.ts file:
-
-```typescript
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-export default supabase;
-```
-
-2. Create a .env file with your Supabase credentials:
-
-```
-VITE_SUPABASE_URL=https://yourprojectid.supabase.co
-VITE_SUPABASE_ANON_KEY=your-anon-key
-```
-
-## Step 5: Create Data Hooks
-
-Replace the existing data hooks with Supabase versions:
-
-1. Create `src/hooks/use-plant-data.ts`:
-
-```typescript
-import { useQuery } from '@tanstack/react-query';
-import supabase from '../lib/supabase';
-
-export function usePlantTypes() {
-  return useQuery({
-    queryKey: ['plant-types'],
-    queryFn: async () => {
-      const { data, error } = await supabase.from('plant_types').select('*');
-      if (error) throw error;
-      return data;
-    }
-  });
-}
-
-// Create similar hooks for other plant data
-```
-
-2. Create similar hook files for product data and research papers
-
-## Step 6: Copy the UI Components
-
-1. Copy your components, pages, and assets directories from the original project
-2. Update any API endpoint references to use your Supabase hooks
-3. Make sure all imports are updated to match your new project structure
-
-## Step 7: Set Up Routing
-
-1. Set up the routing in your App.tsx:
-
-```typescript
-import { Route, Switch } from 'wouter';
-import HomePage from './pages/home';
-// Import other pages
-
-function App() {
-  return (
-    <div className="app">
-      <Switch>
-        <Route path="/" component={HomePage} />
-        {/* Add other routes */}
-      </Switch>
-    </div>
-  );
-}
-
-export default App;
-```
-
-## Step 8: Import Styles
-
-1. Copy the index.css file and ensure the Tailwind directives are included:
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Your custom styles */
-```
-
-## Step 9: Setup Supabase Client-Side Logic
-
-Create utility functions to handle data operations:
-
-```typescript
-// src/lib/api.ts
-import supabase from './supabase';
-
-export async function fetchPlantTypes() {
-  const { data, error } = await supabase.from('plant_types').select('*');
-  if (error) throw error;
-  return data;
-}
-
-// Add more functions for other data operations
-```
-
-## Step 10: Run Your New Project
-
-1. Start the development server:
+5. **Copy the SQL schema files** for reference:
    ```
+   cp /path/to/extracted/supabase-schema*.sql /path/to/hemp-database-ui/
+   ```
+
+## Setting Up a New Supabase Database
+
+1. **Create a new Supabase project** at [supabase.com](https://supabase.com)
+
+2. **Run the schema SQL** in the Supabase SQL Editor:
+   - Go to SQL Editor in your Supabase dashboard
+   - Create a new query
+   - Paste the contents of `supabase-schema-modified.sql`
+   - Run the SQL to create your tables
+
+3. **Update the environment variables** in your project:
+   - Create a `.env` file with:
+   ```
+   VITE_SUPABASE_URL=your_new_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_new_supabase_anon_key
+   ```
+
+4. **Initialize your project**:
+   ```bash
+   npm install
    npm run dev
    ```
 
-2. Verify that the UI looks correct and is properly connected to your Supabase database
+## Sample Data Guide
 
-## Troubleshooting
+### Adding Initial Data
 
-- If components aren't rendering correctly, check for missing dependencies or CSS issues
-- If data isn't loading, verify your Supabase connection and query hooks
-- Check the browser console for any errors related to API calls or component rendering
+After setting up your tables, add some basic data:
+
+```sql
+-- Sample Plant Types
+INSERT INTO public.plant_types (name, description, image_url) VALUES 
+('Fiber Hemp', 'Hemp grown primarily for fiber production with minimal THC content.', 'https://example.com/fiber-hemp.jpg'),
+('Seed Hemp', 'Hemp varieties optimized for seed production.', 'https://example.com/seed-hemp.jpg'),
+('CBD Hemp', 'Hemp cultivated for high CBD content with low THC.', 'https://example.com/cbd-hemp.jpg');
+
+-- Sample Industries
+INSERT INTO public.industries (name, description, icon_name) VALUES 
+('Construction', 'Building materials and construction applications', 'building'),
+('Textiles', 'Fabric and clothing applications', 'scissors'),
+('Food', 'Edible hemp products and ingredients', 'utensils'),
+('Cosmetics', 'Skincare and beauty products', 'droplet'),
+('Biofuel', 'Renewable energy from hemp biomass', 'flame');
+
+-- Sample Plant Parts (after adding Plant Types)
+INSERT INTO public.plant_parts (name, description, plant_type_id) VALUES 
+('Stalk', 'The main stem of the hemp plant', 1),
+('Seeds', 'Hemp seeds used for food and oil production', 2),
+('Flowers', 'The flowering part of the hemp plant containing cannabinoids', 3),
+('Leaves', 'The fan leaves of the hemp plant', 1),
+('Roots', 'The underground portion of the hemp plant', 1);
+```
+
+## UI Customization
+
+This export contains all UI components, including:
+
+- Navbar and navigation components
+- Product listing and detail pages
+- Research paper listings
+- Plant type and parts explorer
+- Industry categorization
+- Administrative interfaces for data management
+
+You can customize these components as needed for your specific application.
+
+## Questions or Issues?
+
+If you encounter any issues:
+
+1. Check the Supabase connection settings
+2. Verify your SQL schema was executed correctly
+3. Look for error messages in the browser console
+4. Ensure your environment variables are correctly set
