@@ -6,11 +6,16 @@ import { z } from "zod";
 import { insertPlantTypeSchema, insertPlantPartSchema, insertIndustrySchema, insertSubIndustrySchema, insertHempProductSchema, insertResearchPaperSchema, plantTypes } from "@shared/schema";
 import { log } from "./vite";
 import { db } from "./db";
+import { dbAlt } from "./db-alt";  // Import alternative connection
+import { initializeDatabase } from "./db-init";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Initialize the database if needed
   try {
-    log("Initializing database if empty...");
+    log("Initializing database schema...");
+    await initializeDatabase();
+    
+    // Check if we have data already
     const existingData = await db.select().from(plantTypes);
     
     // Only initialize if we only have the test data or no data
