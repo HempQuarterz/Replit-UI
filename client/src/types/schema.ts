@@ -55,13 +55,17 @@ export type HempProduct = {
   sustainability_impact?: string | null;
   affiliate_links?: Record<string, any> | null;
   related_product_ids?: number[] | null;
+  // Added array fields from AiHQzMCP
+  benefits?: string[] | null;
+  uses?: string[] | null;
   created_at: string;
 };
 
 export type ResearchPaper = {
   id: number;
   title: string;
-  authors: string;
+  // Changed from string to string[] to match new schema
+  authors: string[];
   abstract: string;
   publication_date?: string | null;
   journal?: string | null;
